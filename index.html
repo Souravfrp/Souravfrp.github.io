@@ -3,25 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sourav Roy — Mathematics & Computer Science Researcher | Quantitative Research">
-  <title>Sourav Roy | Quantitative Research</title>
+  <meta name="description" content="Sourav Roy — TIFR mathematics and computer and system sciences researcher moving into quantitative research, risk analytics, and data science.">
+  <title>Sourav Roy | Quantitative Research & Data Science</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="nav"><div class="container nav-inner"><a class="brand" href="#home">Sourav Roy</a>
-<nav><a href="#research">Research</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#contact">Contact</a></nav></div></header>
+<nav aria-label="Main navigation"><a href="#projects">Projects</a><a href="#research">Research</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav></div></header>
 
 <main>
 <section id="home" class="hero container">
-<p class="eyebrow">MATHEMATICS · ALGORITHMS · QUANTITATIVE RESEARCH</p>
+<p class="eyebrow">MATHEMATICS · ALGORITHMS · QUANTITATIVE FINANCE</p>
 <h1>Sourav Roy</h1>
-<h2>Mathematics & Computer and System Science Researcher</h2>
-<p class="lead">Research background in randomized and approximation algorithms, probability, optimization, convex geometry, combinatorics, and computational mathematics. Interested in quantitative research and mathematically driven problem solving.</p>
+<h2>From mathematical research to quantitative finance and data science</h2>
+<p class="lead">I hold master's degrees in Mathematics and Computer and System Sciences from TIFR. My work in probability, randomized algorithms, convex geometry, and optimization now informs independent projects in market risk and financial decision-making. I am interested in quantitative research, quant and risk analysis, and data science roles.</p>
 <div class="buttons">
-<a class="button primary" href="cv.pdf" target="_blank">View CV</a>
-<a class="button" href="https://github.com/Souravfrp" target="_blank">GitHub</a>
-<a class="button" href="https://arxiv.org/abs/2508.19582" target="_blank">arXiv</a>
+<a class="button primary" href="#projects">Explore Projects</a>
+<a class="button" href="https://arxiv.org/abs/2508.19582" target="_blank" rel="noopener noreferrer">Read Research Paper</a>
+<a class="button" href="cv.pdf" target="_blank" rel="noopener noreferrer">View CV</a>
 </div>
+</section>
+
+    
+
+
+<section id="projects" class="section alt">
+  <div class="container">
+    <p class="eyebrow">SELECTED WORK</p>
+    <h2>Research and projects</h2>
+    <p class="section-intro">Completed work comes first. Ongoing projects are labeled by what has actually been implemented.</p>
+    <div class="grid">
+      <article class="card">
+        <p class="tag">COMPLETED RESEARCH · v1.0.0</p>
+        <h3>Quant AI Market Lab</h3>
+        <p>An eight-ETF research workflow covering validated returns, PCA, market-condition models, SPY risk forecasts, and long-only minimum-variance portfolios. I compare methods chronologically and document backtest timing, benchmarks, costs, and numerical checks.</p>
+        <p>In the historical portfolio study, minimum-variance approaches had lower realized volatility in the reported subperiods. Equal-weight and SPY benchmarks finished with higher value in the zero-cost full-period comparison. This is retrospective evidence, not a live strategy.</p>
+        <p class="card-links"><a href="https://github.com/Souravfrp/quant-ai-market-lab" target="_blank" rel="noopener noreferrer">Code and findings →</a><a href="https://github.com/Souravfrp/quant-ai-market-lab/blob/main/docs/portfolio_mathematics_and_validation.md" target="_blank" rel="noopener noreferrer">Methods and limits →</a></p>
+      </article>
+      <article class="card">
+        <p class="tag">IN PROGRESS · RAW DATA VALIDATED</p>
+        <h3>PaymentGuard</h3>
+        <p>A payment-risk study asking how to balance fraud loss, customer friction, and limited manual-review capacity. The completed stage verifies the data source and profiles 1.09 million raw transactions in memory-controlled chunks. SQL analysis, models, and the approve/review/block policy remain planned work.</p>
+        <p class="card-links"><a href="https://github.com/Souravfrp/payment-guard" target="_blank" rel="noopener noreferrer">Current work and scope →</a></p>
+      </article>
+      <article class="card">
+        <p class="tag">2019 PROJECT · REVISED 2026</p>
+        <h3>RSA Educational Project</h3>
+        <p>My INSPIRE Summer Project implemented RSA key generation, encryption, and decryption for an ASCII message. The repository preserves the 2019 original separately from a tested 2026 revision and explains the number theory and security limitations. It is an educational implementation.</p>
+        <p class="card-links"><a href="https://github.com/Souravfrp/rsa-educational" target="_blank" rel="noopener noreferrer">Original, revision, and tests →</a></p>
+      </article>
+      <article class="card">
+        <p class="tag">PROPOSAL · NO RESULTS YET</p>
+        <h3>ResearchAudit</h3>
+        <p>A proposed multi-agent audit of completed quantitative and risk-analytics components. The repository defines the question and evaluation plan; implementation and experiments have not begun.</p>
+        <p class="card-links"><a href="https://github.com/Souravfrp/research-audit" target="_blank" rel="noopener noreferrer">Read the proposal →</a></p>
+      </article>
+    </div>
+  </div>
 </section>
 <section id="research" class="section">
   <div class="container">
@@ -33,7 +71,7 @@
     <!-- PUBLICATION -->
     <article class="card featured">
 
-      <p class="tag">PUBLICATION</p>
+      <p class="tag">ARXIV PREPRINT · 2025</p>
 
       <h3>Approximating Mixed Volumes to Arbitrary Accuracy</h3>
 
@@ -47,9 +85,7 @@
       </p>
 
       <p>
-        Research on randomized approximation of mixed volumes of convex bodies,
-        connecting convex geometry, optimization, probability, and randomized
-        algorithms.
+        Coauthored research on a randomized algorithm for approximating mixed volumes of convex polytopes. The work connects convex geometry, optimization, probability, and algorithms.
       </p>
 
       <a href="https://arxiv.org/abs/2508.19582"
@@ -118,31 +154,7 @@
 
   </div>
 </section>
-    
 
-
-<section id="projects" class="section alt"><div class="container">
-<p class="eyebrow">PROJECTS</p><h2>Quantitative & Computational Work</h2>
-<div class="grid">
-<article class="card"><p class="tag">QUANTITATIVE RESEARCH · COMPLETED v1.0.0</p><h3>Quant AI Market Lab</h3>
-<p>I built an eight-ETF research workflow to study market structure, forecast SPY risk, and test long-only minimum-variance portfolios. It connects my mathematics and computer and system sciences background to quantitative finance through numerical checks, chronological evaluation, and optimization.</p>
-<p>In the retrospective portfolio study, minimum-variance methods had lower realized volatility in the reported subperiods; equal-weight and SPY benchmarks finished with higher value in the zero-cost full-period comparison. These historical results are not a live trading record.</p>
-<p><a href="https://github.com/Souravfrp/quant-ai-market-lab" target="_blank" rel="noopener noreferrer">Explore code and results →</a> · <a href="https://github.com/Souravfrp/quant-ai-market-lab/blob/main/docs/portfolio_mathematics_and_validation.md" target="_blank" rel="noopener noreferrer">Methods and limitations →</a></p></article>
-<article class="card"><p class="tag">ALGORITHMS</p><h3>GraphPermanentLab</h3>
-<p>Computational experiments for permanent calculations on graph Laplacians, with structured examples involving paths, cycles, and trees.</p></article>
-<article class="card"><p class="tag">COMPUTATIONAL GEOMETRY</p><h3>Mixed Volume Algorithms</h3>
-<p>Computational work related to randomized mixed-volume approximation, convex optimization, sampling, and numerical experimentation.</p></article>
-</div></div></section>
-
-<section id="skills" class="section"><div class="container">
-<p class="eyebrow">TOOLKIT</p><h2>Technical Skills</h2>
-<div class="skills">
-<div><strong>Programming</strong><span>Python · C · MATLAB</span></div>
-<div><strong>Mathematical Computing</strong><span>SageMath · Mathematica · NumPy · SciPy</span></div>
-<div><strong>Mathematics</strong><span>Probability · Linear Algebra · Optimization · Convex Geometry · Combinatorics</span></div>
-<div><strong>Algorithms</strong><span>Randomized Algorithms · Approximation Algorithms · Complexity Analysis</span></div>
-<div><strong>Research Tools</strong><span>Git · GitHub · LaTeX · Jupyter</span></div>
-</div></div></section>
 <section id="education" class="section alt">
   <div class="container">
 
@@ -238,13 +250,23 @@
 
   </div>
 </section>
+<section id="skills" class="section"><div class="container">
+<p class="eyebrow">TOOLKIT</p><h2>Technical Skills</h2>
+<div class="skills">
+<div><strong>Programming</strong><span>Python · C · MATLAB</span></div>
+<div><strong>Mathematical Computing</strong><span>SageMath · Mathematica · NumPy · SciPy</span></div>
+<div><strong>Mathematics</strong><span>Probability · Linear Algebra · Optimization · Convex Geometry · Combinatorics</span></div>
+<div><strong>Algorithms</strong><span>Randomized Algorithms · Approximation Algorithms · Complexity Analysis</span></div>
+<div><strong>Research Tools</strong><span>Git · GitHub · LaTeX · Jupyter</span></div>
+</div></div></section>
+
 
 
 
 
 <section id="contact" class="section"><div class="container contact">
 <p class="eyebrow">CONTACT</p><h2>Let's Connect</h2>
-<p>For quantitative research, mathematical research, and related opportunities.</p>
+<p>For quantitative research, quant and risk analysis, data science, and mathematical research opportunities.</p>
 <div class="buttons"><a class="button primary" href="https://github.com/Souravfrp" target="_blank">GitHub</a>
 <a class="button" href="https://arxiv.org/abs/2508.19582" target="_blank">arXiv</a></div>
 </div></section>
