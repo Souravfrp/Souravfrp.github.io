@@ -41,10 +41,18 @@
         <p class="card-links"><a href="https://github.com/Souravfrp/quant-ai-market-lab" target="_blank" rel="noopener noreferrer">Code and findings →</a><a href="https://github.com/Souravfrp/quant-ai-market-lab/blob/main/docs/portfolio_mathematics_and_validation.md" target="_blank" rel="noopener noreferrer">Methods and limits →</a></p>
       </article>
       <article class="card">
-        <p class="tag">IN PROGRESS · RAW DATA VALIDATED</p>
+        <p class="tag">IN PROGRESS · v0.1 BASELINE FROZEN</p>
+        <h3>Quant Market Lab II</h3>
+        <p>A fixed-cutoff SPY risk-forecasting experiment using only information available through 31 August 2026. I implemented Ridge, constant, and rolling-RMS baselines across four lead times and preserved 12 versioned forecasts for September-December.</p>
+        <p>The release stores model, data, and source fingerprints and includes timing and prefix-invariance tests that prevent post-cutoff observations from changing frozen forecasts. September is labelled retrospective; later forecast windows are evaluated only after realization. The signal-processing extension remains future work.</p>
+        <p class="card-links"><a href="https://github.com/Souravfrp/quant-market-lab-ii" target="_blank" rel="noopener noreferrer">Code and forecast record →</a><a href="https://github.com/Souravfrp/quant-market-lab-ii/blob/main/docs/forecast_freeze_v0_1.md" target="_blank" rel="noopener noreferrer">Protocol and limitations →</a></p>
+      </article>
+      <article class="card">
+        <p class="tag">IN PROGRESS · DATA AUDIT COMPLETED</p>
         <h3>PaymentGuard</h3>
-        <p>A payment-risk study asking how to balance fraud loss, customer friction, and limited manual-review capacity. The completed stage verifies the data source and profiles 1.09 million raw transactions in memory-controlled chunks. SQL analysis, models, and the approve/review/block policy remain planned work.</p>
-        <p class="card-links"><a href="https://github.com/Souravfrp/payment-guard" target="_blank" rel="noopener noreferrer">Current work and scope →</a></p>
+        <p>A payment-risk study asking how to balance fraud loss, customer friction, and limited manual-review capacity. I checksum-verified and validated 1.09 million AMLNet v2 transactions, then audited 17 top-level columns and 47 nested metadata paths.</p>
+        <p>The audit found 4,527 chronological decreases in file order and target-revealing metadata covering all 1,411 fraud labels. I documented a feature policy for chronological modelling. Cleaning, SQL analysis, models, and the approve/review/block policy remain in progress.</p>
+        <p class="card-links"><a href="https://github.com/Souravfrp/payment-guard" target="_blank" rel="noopener noreferrer">Data audit and current scope →</a></p>
       </article>
       <article class="card">
         <p class="tag">2019 PROJECT · REVISED 2026</p>
@@ -53,10 +61,10 @@
         <p class="card-links"><a href="https://github.com/Souravfrp/rsa-educational" target="_blank" rel="noopener noreferrer">Original, revision, and tests →</a></p>
       </article>
       <article class="card">
-        <p class="tag">PROPOSAL · NO RESULTS YET</p>
+        <p class="tag">SETUP STAGE · NO AUDIT RESULTS YET</p>
         <h3>ResearchAudit</h3>
-        <p>A proposed multi-agent audit of completed quantitative and risk-analytics components. The repository defines the question and evaluation plan; implementation and experiments have not begun.</p>
-        <p class="card-links"><a href="https://github.com/Souravfrp/research-audit" target="_blank" rel="noopener noreferrer">Read the proposal →</a></p>
+        <p>An evidence-based multi-agent audit proposal for completed quantitative and risk-analytics components. I have defined the evaluation plan and frozen Quant AI Market Lab v1.0.0 as the first versioned target. Multi-agent implementation and audit experiments have not begun.</p>
+        <p class="card-links"><a href="https://github.com/Souravfrp/research-audit" target="_blank" rel="noopener noreferrer">Plan and frozen target →</a></p>
       </article>
     </div>
   </div>
@@ -260,9 +268,9 @@
 <p class="eyebrow">TOOLKIT</p><h2>Technical Skills</h2>
 <p class="section-intro">Methods and tools I have used in research or the projects linked above.</p>
 <div class="skills">
-<div><strong>Programming &amp; data</strong><span>Python · NumPy · pandas · SciPy · C · MATLAB</span></div>
+<div><strong>Programming &amp; data</strong><span>Python · NumPy · pandas · SciPy · scikit-learn · Python unittest · C · MATLAB</span></div>
 <div><strong>Statistical modeling</strong><span>PCA · KMeans · Gaussian hidden Markov models · Ridge regression · Random Forest</span></div>
-<div><strong>Optimization &amp; evaluation</strong><span>CVXPY · covariance estimation · minimum-variance portfolios · chronological validation · historical backtesting</span></div>
+<div><strong>Optimization &amp; evaluation</strong><span>CVXPY · covariance estimation · minimum-variance portfolios · chronological validation · fixed-cutoff forecasting · historical backtesting · leakage auditing</span></div>
 <div><strong>Mathematics</strong><span>Probability · Linear algebra · Convex geometry · Optimization · Randomized algorithms</span></div>
 <div><strong>Research tools</strong><span>Git · GitHub · Jupyter · LaTeX · SageMath · Mathematica</span></div>
 </div></div></section>
