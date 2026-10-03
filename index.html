@@ -44,14 +44,14 @@
         <p class="tag">IN PROGRESS · v0.1 BASELINE FROZEN</p>
         <h3>Quant Market Lab II</h3>
         <p>A fixed-cutoff SPY risk-forecasting experiment using only information available through 31 August 2026. I implemented Ridge, constant, and rolling-RMS baselines across four lead times and preserved 12 versioned forecasts for September-December.</p>
-        <p>The release stores model, data, and source fingerprints and includes timing and prefix-invariance tests that prevent post-cutoff observations from changing frozen forecasts. September is labelled retrospective; later forecast windows are evaluated only after realization. The signal-processing extension remains future work.</p>
+        <p>The release stores model, data, and source fingerprints and includes timing and prefix-invariance tests that prevent post-cutoff observations from changing frozen forecasts. I have now published the nine preserved October-December five-session forecasts directly from the frozen CSV without refitting; actual outcomes remain pending for those windows. Autocorrelation and autoregressive extensions remain future work.</p>
         <p class="card-links"><a href="https://github.com/Souravfrp/quant-market-lab-ii" target="_blank" rel="noopener noreferrer">Code and forecast record →</a><a href="https://github.com/Souravfrp/quant-market-lab-ii/blob/main/docs/forecast_freeze_v0_1.md" target="_blank" rel="noopener noreferrer">Protocol and limitations →</a></p>
       </article>
       <article class="card">
         <p class="tag">IN PROGRESS · DATA AUDIT COMPLETED</p>
         <h3>PaymentGuard</h3>
         <p>A payment-risk study asking how to balance fraud loss, customer friction, and limited manual-review capacity. I checksum-verified and validated 1.09 million AMLNet v2 transactions, then audited 17 top-level columns and 47 nested metadata paths.</p>
-        <p>The audit found 4,527 chronological decreases in file order and target-revealing metadata covering all 1,411 fraud labels. I documented a feature policy for chronological modelling. Cleaning, SQL analysis, models, and the approve/review/block policy remain in progress.</p>
+        <p>After finding non-chronological file order and target-revealing metadata, I documented a 13-predictor feature policy and prepared all 1.09 million transactions with fixed chronological train/validation/test periods. The saved table was independently verified and 32 preparation tests pass. Modelling, SQL analysis, and the approve/review/block policy remain in progress.</p>
         <p class="card-links"><a href="https://github.com/Souravfrp/payment-guard" target="_blank" rel="noopener noreferrer">Data audit and current scope →</a></p>
       </article>
       <article class="card">
@@ -271,6 +271,7 @@
 <div><strong>Programming &amp; data</strong><span>Python · NumPy · pandas · SciPy · scikit-learn · Python unittest · C · MATLAB</span></div>
 <div><strong>Statistical modeling</strong><span>PCA · KMeans · Gaussian hidden Markov models · Ridge regression · Random Forest</span></div>
 <div><strong>Optimization &amp; evaluation</strong><span>CVXPY · covariance estimation · minimum-variance portfolios · chronological validation · fixed-cutoff forecasting · historical backtesting · leakage auditing</span></div>
+<div><strong>Simulation &amp; sampling</strong><span>Randomized algorithms · ball walk · hit-and-run · MCMC-style sampling · numerical validation · mixed-volume computation</span></div>
 <div><strong>Mathematics</strong><span>Probability · Linear algebra · Convex geometry · Optimization · Randomized algorithms</span></div>
 <div><strong>Research tools</strong><span>Git · GitHub · Jupyter · LaTeX · SageMath · Mathematica</span></div>
 </div></div></section>
@@ -282,7 +283,7 @@
 <section id="contact" class="section"><div class="container contact">
 <p class="eyebrow">CONTACT</p><h2>Let's Connect</h2>
 <p>For quantitative research, quant and risk analysis, data science, and mathematical research opportunities.</p>
-<div class="buttons"><a class="button primary" href="mailto:roysrv8@gmail.com">Email: roysrv8@gmail.com</a>
+<div class="buttons"><a class="button primary" href="mailto:souravroy.tifr@gmail.com">Email: souravroy.tifr@gmail.com</a>
 <a class="button" href="https://github.com/Souravfrp" target="_blank" rel="noopener noreferrer">GitHub</a>
 <a class="button" href="https://arxiv.org/abs/2508.19582" target="_blank" rel="noopener noreferrer">arXiv</a></div>
 </div></section>
