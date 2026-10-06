@@ -31,7 +31,7 @@
   <div class="container">
     <p class="eyebrow">SELECTED WORK</p>
     <h2>Research and projects</h2>
-    <p class="section-intro">Completed work comes first. Ongoing projects are labeled by what has actually been implemented.</p>
+    <p class="section-intro">Completed work comes first. Ongoing projects are labeled by what has actually been implemented. Project status below reflects the repositories as checked on 6 October 2026.</p>
     <div class="grid">
       <article class="card">
         <p class="tag">COMPLETED RESEARCH · v1.0.0</p>
@@ -48,11 +48,11 @@
         <p class="card-links"><a href="https://github.com/Souravfrp/quant-market-lab-ii" target="_blank" rel="noopener noreferrer">Code and forecast record →</a><a href="https://github.com/Souravfrp/quant-market-lab-ii/blob/main/docs/forecast_freeze_v0_1.md" target="_blank" rel="noopener noreferrer">Protocol and limitations →</a></p>
       </article>
       <article class="card">
-        <p class="tag">IN PROGRESS · DATA AUDIT COMPLETED</p>
+        <p class="tag">IN PROGRESS · FIRST BASELINE MILESTONE COMPLETE</p>
         <h3>PaymentGuard</h3>
-        <p>A payment-risk study asking how to balance fraud loss, customer friction, and limited manual-review capacity. I checksum-verified and validated 1.09 million AMLNet v2 transactions, then audited 17 top-level columns and 47 nested metadata paths.</p>
-        <p>After finding non-chronological file order and target-revealing metadata, I documented a 13-predictor feature policy and prepared all 1.09 million transactions with fixed chronological train/validation/test periods. The saved table was independently verified and 32 preparation tests pass. Modelling, SQL analysis, and the approve/review/block policy remain in progress.</p>
-        <p class="card-links"><a href="https://github.com/Souravfrp/payment-guard" target="_blank" rel="noopener noreferrer">Data audit and current scope →</a></p>
+        <p>A payment-risk study on ranking transactions for fraud review under limited review capacity, using 1.09 million synthetic AMLNet v2 transactions. I validated and chronologically prepared the data, audited nested metadata for leakage, verified the SQLite import, explored the training period in SQL, and built the first fitted baseline comparison.</p>
+        <p>On the February 2026 validation period (167,990 transactions; 202 positives), the log-amount logistic baseline caught 196 of 202 fraud labels at a predeclared 1% review budget: 97.03% recall and 11.67% precision. The raw-amount logistic model caught 188, while ranking the largest amounts caught 109. The result is a ranking comparison on synthetic data, not evidence of deployed fraud-detection performance. The checkpoint has 61 passing tests; calibration, feature-removal studies, decision costs, final holdout evaluation and drift analysis remain future work.</p>
+        <p class="card-links"><a href="https://github.com/Souravfrp/payment-guard" target="_blank" rel="noopener noreferrer">Code and current milestone →</a><a href="https://github.com/Souravfrp/payment-guard/blob/main/docs/logistic_baseline_first_results.md" target="_blank" rel="noopener noreferrer">First baseline results →</a></p>
       </article>
       <article class="card">
         <p class="tag">2019 PROJECT · REVISED 2026</p>
@@ -61,10 +61,11 @@
         <p class="card-links"><a href="https://github.com/Souravfrp/rsa-educational" target="_blank" rel="noopener noreferrer">Original, revision, and tests →</a></p>
       </article>
       <article class="card">
-        <p class="tag">SETUP STAGE · NO AUDIT RESULTS YET</p>
+        <p class="tag">EARLY AUDIT STAGE · FIRST CLAIM INVENTORY</p>
         <h3>ResearchAudit</h3>
-        <p>An evidence-based multi-agent audit proposal for completed quantitative and risk-analytics components. I have defined the evaluation plan and frozen Quant AI Market Lab v1.0.0 as the first versioned target. Multi-agent implementation and audit experiments have not begun.</p>
-        <p class="card-links"><a href="https://github.com/Souravfrp/research-audit" target="_blank" rel="noopener noreferrer">Plan and frozen target →</a></p>
+        <p>An evidence-based audit project for quantitative and risk-analytics work. I froze Quant AI Market Lab v1.0.0 as the first target and have started a claim-by-claim audit of its portfolio backtest documentation against the frozen source code.</p>
+        <p>The first inventory records seven claims with explicit evidence and provisional labels: six are currently supported from code inspection (including cutoff handling, covariance windows, next-session execution, PSD checking, monthly decision-date counting and log-to-simple return conversion), while the transaction-cost claim is explicitly marked not yet checked. I have not run the frozen code or reproduced numerical results because the source data are not included in the audit snapshot. The planned rule-based checker and multi-agent experiments have not yet been run.</p>
+        <p class="card-links"><a href="https://github.com/Souravfrp/research-audit" target="_blank" rel="noopener noreferrer">Audit project →</a><a href="https://github.com/Souravfrp/research-audit/blob/main/audit/quant_ai_market_lab_v1/claim_inventory.md" target="_blank" rel="noopener noreferrer">First claim inventory →</a></p>
       </article>
     </div>
   </div>
@@ -268,7 +269,7 @@
 <p class="eyebrow">TOOLKIT</p><h2>Technical Skills</h2>
 <p class="section-intro">Methods and tools I have used in research or the projects linked above.</p>
 <div class="skills">
-<div><strong>Programming &amp; data</strong><span>Python · NumPy · pandas · SciPy · scikit-learn · Python unittest · C · MATLAB</span></div>
+<div><strong>Programming &amp; data</strong><span>Python · NumPy · pandas · SciPy · scikit-learn · SQL · SQLite · Python unittest · C · MATLAB</span></div>
 <div><strong>Statistical modeling</strong><span>PCA · KMeans · Gaussian hidden Markov models · Ridge regression · Random Forest</span></div>
 <div><strong>Optimization &amp; evaluation</strong><span>CVXPY · covariance estimation · minimum-variance portfolios · chronological validation · fixed-cutoff forecasting · historical backtesting · leakage auditing</span></div>
 <div><strong>Simulation &amp; sampling</strong><span>Randomized algorithms · ball walk · hit-and-run · MCMC-style sampling · numerical validation · mixed-volume computation</span></div>
