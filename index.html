@@ -31,26 +31,26 @@
   <div class="container">
     <p class="eyebrow">SELECTED WORK</p>
     <h2>Research and projects</h2>
-    <p class="section-intro">Completed work comes first. Ongoing projects are labeled by what has actually been implemented. Project status below reflects the repositories as checked on 6 October 2026.</p>
+    <p class="section-intro">Completed work comes first. Ongoing projects are labeled by what has actually been implemented. Project status below reflects the repositories as checked on 7 October 2026. The downloadable CV is a dated application snapshot; the linked repositories are the living research record and may progress after a CV is submitted.</p>
     <div class="grid">
       <article class="card">
         <p class="tag">COMPLETED RESEARCH · v1.0.0</p>
         <h3>Quant AI Market Lab</h3>
-        <p>An eight-ETF research workflow covering validated returns, PCA, market-condition models, SPY risk forecasts, and long-only minimum-variance portfolios. I compare methods chronologically and document backtest timing, benchmarks, costs, and numerical checks.</p>
+        <p>An eight-ETF research workflow covering validated returns, PCA, market-condition models, SPY risk forecasts, and long-only minimum-variance portfolios. Model choice is question-driven: PCA summarizes standardized cross-asset variation; KMeans is a geometric baseline; Gaussian HMMs add temporal persistence; Ridge is an interpretable regularized forecasting baseline and Random Forest a nonlinear challenger. I compare methods chronologically and document backtest timing, benchmarks, costs, and numerical checks.</p>
         <p>In the historical portfolio study, minimum-variance approaches had lower realized volatility in the reported subperiods. Equal-weight and SPY benchmarks finished with higher value in the zero-cost full-period comparison. This is retrospective evidence, not a live strategy.</p>
         <p class="card-links"><a href="https://github.com/Souravfrp/quant-ai-market-lab" target="_blank" rel="noopener noreferrer">Code and findings →</a><a href="https://github.com/Souravfrp/quant-ai-market-lab/blob/main/docs/portfolio_mathematics_and_validation.md" target="_blank" rel="noopener noreferrer">Methods and limits →</a></p>
       </article>
       <article class="card">
         <p class="tag">IN PROGRESS · v0.1 BASELINE FROZEN</p>
         <h3>Quant Market Lab II</h3>
-        <p>A fixed-cutoff SPY risk-forecasting experiment using only information available through 31 August 2026. I implemented Ridge, constant, and rolling-RMS baselines across four lead times and preserved 12 versioned forecasts for September-December.</p>
+        <p>A fixed-cutoff SPY risk-forecasting experiment using only information available through 31 August 2026. I keep constant and rolling-RMS references beside Ridge because added complexity should earn its place against simple historical baselines, and preserved 12 versioned forecasts for September-December.</p>
         <p>The release stores model, data, and source fingerprints and includes timing and prefix-invariance tests that prevent post-cutoff observations from changing frozen forecasts. I have now published the nine preserved October-December five-session forecasts directly from the frozen CSV without refitting; actual outcomes remain pending for those windows. Autocorrelation and autoregressive extensions remain future work.</p>
         <p class="card-links"><a href="https://github.com/Souravfrp/quant-market-lab-ii" target="_blank" rel="noopener noreferrer">Code and forecast record →</a><a href="https://github.com/Souravfrp/quant-market-lab-ii/blob/main/docs/forecast_freeze_v0_1.md" target="_blank" rel="noopener noreferrer">Protocol and limitations →</a></p>
       </article>
       <article class="card">
         <p class="tag">IN PROGRESS · FIRST BASELINE MILESTONE COMPLETE</p>
         <h3>PaymentGuard</h3>
-        <p>A payment-risk study on ranking transactions for fraud review under limited review capacity, using 1.09 million synthetic AMLNet v2 transactions. I validated and chronologically prepared the data, audited nested metadata for leakage, verified the SQLite import, explored the training period in SQL, and built the first fitted baseline comparison.</p>
+        <p>A payment-risk study on ranking transactions for fraud review under limited review capacity, using 1.09 million synthetic AMLNet v2 transactions. I validated and chronologically prepared the data, audited nested metadata for leakage, verified the SQLite import, explored the training period in SQL, and chose logistic regression as the first interpretable fitted ranking baseline before adding complexity.</p>
         <p>On the February 2026 validation period (167,990 transactions; 202 positives), the log-amount logistic baseline caught 196 of 202 fraud labels at a predeclared 1% review budget: 97.03% recall and 11.67% precision. The raw-amount logistic model caught 188, while ranking the largest amounts caught 109. The result is a ranking comparison on synthetic data, not evidence of deployed fraud-detection performance. The checkpoint has 61 passing tests; calibration, feature-removal studies, decision costs, final holdout evaluation and drift analysis remain future work.</p>
         <p class="card-links"><a href="https://github.com/Souravfrp/payment-guard" target="_blank" rel="noopener noreferrer">Code and current milestone →</a><a href="https://github.com/Souravfrp/payment-guard/blob/main/docs/logistic_baseline_first_results.md" target="_blank" rel="noopener noreferrer">First baseline results →</a></p>
       </article>
@@ -65,7 +65,7 @@
         <h3>ResearchAudit</h3>
         <p>An evidence-based audit project for quantitative and risk-analytics work. I froze Quant AI Market Lab v1.0.0 as the first target and have started a claim-by-claim audit of its portfolio backtest documentation against the frozen source code.</p>
         <p>The first inventory records seven claims with explicit evidence and provisional labels: six are currently supported from code inspection (including cutoff handling, covariance windows, next-session execution, PSD checking, monthly decision-date counting and log-to-simple return conversion), while the transaction-cost claim is explicitly marked not yet checked. I have not run the frozen code or reproduced numerical results because the source data are not included in the audit snapshot. The planned rule-based checker and multi-agent experiments have not yet been run.</p>
-        <p class="card-links"><a href="https://github.com/Souravfrp/research-audit" target="_blank" rel="noopener noreferrer">Audit project →</a><a href="https://github.com/Souravfrp/research-audit/blob/main/audit/quant_ai_market_lab_v1/claim_inventory.md" target="_blank" rel="noopener noreferrer">First claim inventory →</a></p>
+        <p class="card-links"><a href="https://github.com/Souravfrp/research-audit" target="_blank" rel="noopener noreferrer">Audit project →</a><a href="https://github.com/Souravfrp/research-audit/blob/main/claims/claim_inventory.md" target="_blank" rel="noopener noreferrer">First claim inventory →</a></p>
       </article>
     </div>
   </div>
