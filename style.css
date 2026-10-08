@@ -17,3 +17,38 @@ footer{padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 @media(max-width:720px){.nav-inner{padding:12px 0;align-items:flex-start;flex-direction:column;gap:6px}nav{gap:8px 16px}nav a{font-size:.86rem}.hero{padding:76px 0 70px}.section{scroll-margin-top:118px}.grid{grid-template-columns:1fr}.skills div{grid-template-columns:1fr;gap:6px}}
 
 :focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+
+
+/* Current research: evidence first, with readable figures and explicit scope. */
+html { scroll-behavior: smooth; scroll-padding-top: 110px; }
+.update-strip { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:28px 0 32px; }
+.update-strip a { padding:18px; border:1px solid var(--line); border-radius:12px; text-decoration:none; background:var(--panel); }
+.update-strip strong, .update-strip span, .result-box strong, .result-box span { display:block; }
+.update-strip span { font-size:.85rem; color:var(--muted); margin-top:6px; }
+.project-grid { align-items:start; }
+.project-question { color:var(--text)!important; font-size:1.15rem; }
+.result-box { background:rgba(118,169,255,.08); border-left:3px solid var(--accent); padding:16px; margin:22px 0; }
+.result-box strong { font-size:1.07rem; line-height:1.5; }
+.result-box span { color:var(--muted); font-size:.9rem; margin-top:7px; }
+.card figure { margin:22px 0; }
+.card figure img { display:block; width:100%; height:auto; border-radius:8px; background:#fff; }
+.card figcaption { color:var(--muted); font-size:.82rem; line-height:1.55; margin-top:10px; }
+.card .scope, .branch-note { border-top:1px solid var(--line); padding-top:15px; font-size:.9rem; }
+.card-links { display:flex; flex-wrap:wrap; gap:12px 18px; }
+.card-links a { font-size:.9rem; }
+.card details { border:1px solid var(--line); border-radius:8px; padding:14px; margin:20px 0; }
+.card summary { cursor:pointer; font-weight:600; line-height:1.5; }
+.table-wrap { overflow-x:auto; }
+.card table { width:100%; border-collapse:collapse; font-size:.85rem; margin-top:12px; }
+.card caption { text-align:left; padding:10px 0; color:var(--muted); }
+.card th, .card td { padding:10px 5px; text-align:left; border-bottom:1px solid var(--line); }
+.claim-list { list-style:none; padding:0; margin:24px 0; }
+.claim-list li { display:flex; justify-content:space-between; gap:14px; padding:12px 0; border-bottom:1px solid var(--line); font-size:.9rem; }
+.claim-list b { color:#a3e2c1; font-size:.8rem; white-space:nowrap; }
+.claim-list .pending b { color:#ffd18a; }
+.supplementary { grid-column:1/-1; }
+@media(max-width:900px) { .update-strip { grid-template-columns:repeat(2,1fr); } }
+@media(max-width:720px) { .project-grid .card { padding:22px; } .claim-list li { gap:8px; } }
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+
+.update-strip a { color:var(--text); }
