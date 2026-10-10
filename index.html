@@ -31,7 +31,7 @@
 <div class="container">
 <p class="eyebrow">CURRENT RESEARCH · CHECKED 10 OCTOBER 2026</p>
 <h2>Questions, experiments and evidence</h2>
-<p class="section-intro">I am building a research record that shows what I tested, what happened and what I can conclude. Explore the results below, then follow the links for equations, code, data provenance and limitations. My current HTML CV and the summaries below reflect this checkpoint. The earlier downloadable PDF remains a dated snapshot; the repositories hold the continuing evidence.</p>
+<p class="section-intro">I am building a research record that shows what I tested, what happened and what I can conclude. Explore the results below, then follow the links for equations, code, data provenance and limitations. My current HTML CV and the summaries below reflect this checkpoint. The repositories hold the continuing evidence.</p>
 <div class="update-strip" aria-label="Current project milestones">
 <a href="#market-lab"><strong>Market risk</strong><span>Completed historical study</span></a>
 <a href="#market-lab-ii"><strong>Frozen forecasts</strong><span>EWMA frozen · ACF diagnosed</span></a>
@@ -90,7 +90,8 @@
 <article class="card supplementary" id="mixed-volume">
 <p class="tag">PYTHON AND C++ EXPERIMENTS · FROZEN OCTOBER CHECKPOINT</p>
 <h3>Mixed Volume Approximations</h3>
-<p>I implement B1, B2, B3 and Algorithms 1–3 for a centered cube plus a scaled Euclidean ball. I compare volume and mixed-volume estimates with exact cube formulas, then compare Python and C++ calculation time under matched settings.</p>
+<p>These labels come from my master's thesis, <a href="Mixed_volume_thesis_pdf.pdf"><em>Approximation of Mixed Volumes of Special Convex Bodies</em></a> (TIFR, March 2026, Chapters 4–6). B1 estimates the volume of the polytope plus a scaled ball; B2 returns a geometric component label from a sampled point; B3 estimates the component probabilities through repeated sampling. Algorithm 1 describes B2 sampling, Algorithm 2 searches for a useful scaling parameter, and Algorithm 3 combines the volume and component probability to estimate a mixed-volume coefficient.</p>
+<p>I implement numerical versions of the oracle framework from my master's thesis for a centered cube plus a scaled Euclidean ball. I compare volume and mixed-volume estimates with exact cube formulas, then compare Python and C++ calculation time under matched settings.</p>
 <figure><a href="https://github.com/Souravfrp/estimates-of-mixed-volume-components/blob/main/results/dimension_comparison.svg"><img src="https://raw.githubusercontent.com/Souravfrp/estimates-of-mixed-volume-components/6cc23eb688a71d890b364fe3e589498e085d2d49/results/dimension_comparison.svg" alt="Python and C++ pilot comparison showing measured calculation time and relative volume error as dimension changes." loading="lazy"></a><figcaption>Matched pilot: dimensions 7, 9 and 11 at lambda 1.5, three seeds. Measurements came from the recorded development environment, not my Mac. Measured runtime is not asymptotic complexity.</figcaption></figure>
 <p class="scope">My theoretical framework uses stated ideal-oracle assumptions. These finite-walk, floating-point experiments do not establish certified mixing or accuracy guarantees and do not assess the validity of my theorem or proof. A faster implementation does not remove sampling uncertainty.</p>
 <p class="card-links"><a href="https://github.com/Souravfrp/estimates-of-mixed-volume-components">Notebooks, C++ and benchmark records →</a></p>
