@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Sourav Roy — TIFR mathematics and computer and system sciences researcher moving into quantitative research, risk analytics, and data science.">
   <title>Sourav Roy | Quantitative Research & Data Science</title>
-  <link rel="stylesheet" href="style.css?v=20261008">
+  <link rel="stylesheet" href="style.css?v=20261010">
 </head>
 <body>
 <header class="nav"><div class="container nav-inner"><a class="brand" href="#home">Sourav Roy</a>
@@ -20,7 +20,7 @@
 <div class="buttons">
 <a class="button primary" href="#projects">Explore Projects</a>
 <a class="button" href="https://arxiv.org/abs/2508.19582" target="_blank" rel="noopener noreferrer">Read Research Paper</a>
-<a class="button" href="cv.pdf" target="_blank" rel="noopener noreferrer">View CV</a>
+<a class="button" href="cv.html" target="_blank" rel="noopener noreferrer">View current CV</a>
 </div>
 </section>
 
@@ -29,14 +29,14 @@
 
 <section id="projects" class="section alt">
 <div class="container">
-<p class="eyebrow">CURRENT RESEARCH · CHECKED 8 OCTOBER 2026</p>
+<p class="eyebrow">CURRENT RESEARCH · CHECKED 10 OCTOBER 2026</p>
 <h2>Questions, experiments and evidence</h2>
-<p class="section-intro">I am building a research record that shows what I tested, what happened and what I can conclude. Explore the results below, then follow the links for equations, code, data provenance and limitations. The downloadable CV is a dated snapshot; these repositories record the continuing work.</p>
+<p class="section-intro">I am building a research record that shows what I tested, what happened and what I can conclude. Explore the results below, then follow the links for equations, code, data provenance and limitations. My current HTML CV and the summaries below reflect this checkpoint. The earlier downloadable PDF remains a dated snapshot; the repositories hold the continuing evidence.</p>
 <div class="update-strip" aria-label="Current project milestones">
 <a href="#market-lab"><strong>Market risk</strong><span>Completed historical study</span></a>
-<a href="#market-lab-ii"><strong>Frozen forecasts</strong><span>October evaluated · EWMA frozen</span></a>
-<a href="#paymentguard"><strong>Payment risk</strong><span>Feature dependence examined</span></a>
-<a href="#researchaudit"><strong>Research checks</strong><span>Seven claims inventoried</span></a>
+<a href="#market-lab-ii"><strong>Frozen forecasts</strong><span>EWMA frozen · ACF diagnosed</span></a>
+<a href="#paymentguard"><strong>Payment risk</strong><span>Features and review costs examined</span></a>
+<a href="#researchaudit"><strong>Research checks</strong><span>Rule-based baseline published</span></a>
 </div>
 <div class="grid project-grid">
 <article class="card" id="market-lab">
@@ -59,6 +59,8 @@
 <figure><a href="https://github.com/Souravfrp/quant-market-lab-ii/blob/main/results/figures/october_2026_baseline_evaluation.png"><img src="https://raw.githubusercontent.com/Souravfrp/quant-market-lab-ii/9d686a085f095f857af3d24ecf1a0df439294b16/results/figures/october_2026_baseline_evaluation.png" alt="Frozen October risk forecasts compared with the observed five-session RMS." loading="lazy"></a><figcaption>Archived October evaluation using displayed adjusted closes. Full-precision Yahoo reconciliation confirms 0.5263% and the same closest method.</figcaption></figure>
 <p><strong>Next experiment, now implemented:</strong> EWMA extends the existing rolling-RMS experiment with decaying weights. I froze separate runs through 31 August and 7 October, verified the preserved original August CSV by its hash, and also tested an EWMA feature in Ridge.</p>
 <details><summary>See the November and December forecast record</summary><div class="table-wrap"><table><caption>Daily RMS forecasts from the 7 October cutoff</caption><thead><tr><th>Target sessions</th><th>EWMA</th><th>Ridge + EWMA</th></tr></thead><tbody><tr><td>2–6 November</td><td>0.5287%</td><td>0.7430%</td></tr><tr><td>1–7 December</td><td>0.5287%</td><td>0.8169%</td></tr></tbody></table></div><figure><a href="https://github.com/Souravfrp/quant-market-lab-ii/blob/main/forecasts/2026-10-08-ewma-august-original-verified/figures/historical_mae.png"><img src="https://raw.githubusercontent.com/Souravfrp/quant-market-lab-ii/9d686a085f095f857af3d24ecf1a0df439294b16/forecasts/2026-10-08-ewma-august-original-verified/figures/historical_mae.png" alt="Historical mean absolute errors for baseline and EWMA models on 44 matched forecast windows." loading="lazy"></a><figcaption>Historical comparison from the verified original August dataset; future outcomes remain pending.</figcaption></figure><p>The augmented model has lower measured error in the historical comparison. The future windows remain pending. Newly calculated September/October EWMA results are retrospective; the earlier baseline forecasts retain their original timestamps.</p></details>
+<p><strong>Why I checked autocorrelation next:</strong> In the preserved August history, lag-1 ACF is -0.116 for signed returns, 0.420 for squared returns and 0.352 for absolute returns. I examine persistence in move size using existing data, without adding a forecasting model or changing frozen forecasts.</p>
+<figure><a href="https://github.com/Souravfrp/quant-market-lab-ii/blob/main/docs/autocorrelation_analysis.md"><img src="https://raw.githubusercontent.com/Souravfrp/quant-market-lab-ii/caad5f82064e835ddf8f12e192c5979fc5e29748/results/autocorrelation_2026-10-10/figures/acf.svg" alt="Signed, squared and absolute SPY return autocorrelation from the preserved August dataset." loading="lazy"></a><figcaption>The reference band is a rough white-noise guide. Persistence does not establish forecast superiority; non-overlapping targets do not guarantee independence.</figcaption></figure>
 <p class="scope"><strong>Scope:</strong> Five-session risk forecasts, not price direction or whole-month volatility. One completed window cannot establish a consistently better model; download vintages and freeze dates are recorded explicitly.</p>
 <p class="card-links"><a href="https://github.com/Souravfrp/quant-market-lab-ii">Code and forecast record →</a><a href="https://github.com/Souravfrp/quant-market-lab-ii/blob/main/docs/ewma_freeze_2026-10-08.md">EWMA equations, graphs and freezes →</a><a href="https://github.com/Souravfrp/quant-market-lab-ii/blob/main/docs/model_scope_and_limitations.md">Model scope →</a></p>
 </article>
@@ -68,24 +70,30 @@
 <p class="project-question">Which transactions should receive attention when review capacity is limited?</p>
 <p>I prepared 1.09 million synthetic AMLNet v2 transactions, checked nested metadata for leakage, verified the SQLite import and compared interpretable ranking baselines on a chronological validation period.</p>
 <div class="result-box"><strong>196 of 202 fraud labels found at a 1% review budget</strong><span>Log-amount logistic regression: 97.03% recall, 11.67% precision; 1,680 reviews include 1,484 false positives.</span></div>
-<figure><a href="https://github.com/Souravfrp/payment-guard/blob/baseline/feature-ablation/results/figures/paymentguard_model_overview.png"><img src="https://raw.githubusercontent.com/Souravfrp/payment-guard/27b9076294e87f5c98fc5b5bba45fcce7d2e30e2/results/figures/paymentguard_model_overview.png" alt="PaymentGuard validation overview showing model rankings, review workload and feature-removal comparisons." loading="lazy"></a><figcaption>Synthetic-data validation: performance must be read alongside workload and dependence on the available features.</figcaption></figure>
+<figure><a href="https://github.com/Souravfrp/payment-guard/blob/main/results/figures/paymentguard_model_overview.png"><img src="https://raw.githubusercontent.com/Souravfrp/payment-guard/27b9076294e87f5c98fc5b5bba45fcce7d2e30e2/results/figures/paymentguard_model_overview.png" alt="PaymentGuard validation overview showing model rankings, review workload and feature-removal comparisons." loading="lazy"></a><figcaption>Synthetic-data validation: performance must be read alongside workload and dependence on the available features.</figcaption></figure>
 <p><strong>What I checked next:</strong> Removing the transaction-category feature reduced caught fraud labels from 196 to 130 at the same budget. I examined category-level errors and reconstructed two individual scores near the review cutoff. These experiments expose feature dependence rather than proving generalization.</p>
-<p class="branch-note">Latest experiments and figures are on <a href="https://github.com/Souravfrp/payment-guard/tree/baseline/feature-ablation">baseline/feature-ablation</a> (72 reported passing tests). Main retains the earlier baseline checkpoint.</p>
-<p class="scope"><strong>Next:</strong> Decision costs, calibration and final-period evaluation. This is synthetic-data research; the final period was visible in an earlier audit, so it is not an untouched holdout.</p>
-<p class="card-links"><a href="https://github.com/Souravfrp/payment-guard/tree/baseline/feature-ablation">Latest research →</a><a href="https://github.com/Souravfrp/payment-guard/blob/baseline/feature-ablation/docs/feature_ablation_results.md">Feature-removal findings →</a><a href="https://github.com/Souravfrp/payment-guard/blob/baseline/feature-ablation/docs/visual_results_guide.md">Charts and score explanations →</a></p>
+<p class="branch-note">The current main branch includes feature ablations, score explanations and exploratory review-cost, transaction-value and six missed-case analyses; 72 tests were reported passing. Row-level data and model artifacts remain local.</p>
+<p class="scope"><strong>What I examined next:</strong> Hypothetical review costs and cost-ratio sensitivity. These do not demonstrate realized savings or a live decision policy. Calibration, drift and final-period evaluation remain open. This is synthetic-data research; the final period was visible in an earlier audit, so it is not an untouched holdout.</p>
+<p class="card-links"><a href="https://github.com/Souravfrp/payment-guard">Latest research →</a><a href="https://github.com/Souravfrp/payment-guard/blob/main/docs/feature_ablation_results.md">Feature-removal findings →</a><a href="https://github.com/Souravfrp/payment-guard/blob/main/docs/visual_results_guide.md">Charts and score explanations →</a></p>
 </article>
 <article class="card" id="researchaudit">
-<p class="tag">EARLY AUDIT STAGE · MANUAL CLAIM INVENTORY</p>
+<p class="tag">RULE-BASED BASELINE PUBLISHED · 10 OCTOBER 2026</p>
 <h3>ResearchAudit</h3>
 <p class="project-question">What evidence supports a research claim, and what still needs checking?</p>
-<p>I froze Quant AI Market Lab v1.0.0 as the first audit target and compared seven portfolio-backtest claims with its source code. Each claim has explicit evidence and a provisional status.</p>
-<div class="result-box"><strong>6 supported by code inspection · 1 not yet checked</strong><span>These are inspection findings. I have not executed the frozen code or reproduced its numerical results.</span></div>
-<ol class="claim-list" aria-label="Claim inspection status">
-<li><span>Cutoff handling</span><b>Supported</b></li><li><span>Covariance window</span><b>Supported</b></li><li><span>Next-session execution</span><b>Supported</b></li><li><span>PSD check, with tolerance caveat</span><b>Supported</b></li><li><span>87 monthly decisions</span><b>Supported</b></li><li><span>Log-to-simple return conversion</span><b>Supported</b></li><li class="pending"><span>Transaction-cost implementation</span><b>Not checked</b></li>
-</ol>
-<p><strong>Next:</strong> Check the transaction-cost claim and implement a rule-based baseline before evaluating the proposed multi-agent audit. The source data are absent from the audit snapshot, so numerical reproduction remains open.</p>
-<p class="scope"><strong>Scope:</strong> A transparent evidence inventory. The proposed AI agents have not been implemented or benchmarked; their audit reliability is not established.</p>
-<p class="card-links"><a href="https://github.com/Souravfrp/research-audit">Audit project →</a><a href="https://github.com/Souravfrp/research-audit/blob/main/claims/claim_inventory.md">Read all seven claims and evidence →</a></p>
+<p>I froze Quant AI Market Lab v1.0.0 and built a Python rule-based checker that screens source patterns, records file coverage and produces reviewable reports. I also tested its isolated transaction-cost function.</p>
+<div class="result-box"><strong>34 Python files screened · 52 test methods passed</strong><span>10 candidate findings were triaged. Twenty designed examples run within one test; these are not independent detection-accuracy measurements.</span></div>
+<p><strong>What I found:</strong> Claim 7 is supported for the tested cases, with two input-validation gaps: near-unit weight sums can overallocate, and two-dimensional weights can trigger broadcasting. I preserved the audited source and added tests that record these behaviours.</p>
+<p>The other six claims retain their provisional source-inspection labels. I confirmed no look-ahead error at the flagged locations; that does not certify the entire project as leakage-free.</p>
+<p class="scope"><strong>Limits and next step:</strong> I have not reproduced the full backtest numerical results or implemented the proposed multi-agent system. Variable-valued settings, aliased split imports and some seed paths remain checker blind spots. I need independent labelled cases and a second frozen target before claiming broader audit reliability.</p>
+<p class="card-links"><a href="https://github.com/Souravfrp/research-audit">Published baseline →</a><a href="https://github.com/Souravfrp/research-audit/blob/main/claims/claim_07_transaction_costs.md">Claim 7 evidence and gaps →</a><a href="https://github.com/Souravfrp/research-audit/blob/main/docs/rule_based_checker.md">Rules and limitations →</a><a href="https://github.com/Souravfrp/research-audit/blob/main/results/rule_checker_triage.md">Reviewed findings →</a></p>
+</article>
+<article class="card supplementary" id="mixed-volume">
+<p class="tag">PYTHON AND C++ EXPERIMENTS · FROZEN OCTOBER CHECKPOINT</p>
+<h3>Mixed Volume Approximations</h3>
+<p>I implement B1, B2, B3 and Algorithms 1–3 for a centered cube plus a scaled Euclidean ball. I compare volume and mixed-volume estimates with exact cube formulas, then compare Python and C++ calculation time under matched settings.</p>
+<figure><a href="https://github.com/Souravfrp/estimates-of-mixed-volume-components/blob/main/results/dimension_comparison.svg"><img src="https://raw.githubusercontent.com/Souravfrp/estimates-of-mixed-volume-components/6cc23eb688a71d890b364fe3e589498e085d2d49/results/dimension_comparison.svg" alt="Python and C++ pilot comparison showing measured calculation time and relative volume error as dimension changes." loading="lazy"></a><figcaption>Matched pilot: dimensions 7, 9 and 11 at lambda 1.5, three seeds. Measurements came from the recorded development environment, not my Mac. Measured runtime is not asymptotic complexity.</figcaption></figure>
+<p class="scope">My theoretical framework uses stated ideal-oracle assumptions. These finite-walk, floating-point experiments do not establish certified mixing or accuracy guarantees and do not assess the validity of my theorem or proof. A faster implementation does not remove sampling uncertainty.</p>
+<p class="card-links"><a href="https://github.com/Souravfrp/estimates-of-mixed-volume-components">Notebooks, C++ and benchmark records →</a></p>
 </article>
 <article class="card supplementary">
 <p class="tag">2019 PROJECT · REVISED 2026</p><h3>RSA Educational Project</h3>
@@ -203,7 +211,7 @@
 
       <!-- M.Sc. Computer and System Sciences -->
       <article>
-        <h3>M.Sc. in Computer and System Sciences</h3>
+        <h3>M.Sc. in Computer and System Sciences</h3><p class="meta">2021–2026 · First Class</p>
 
         <p>
           <a href="https://www.tcs.tifr.res.in/web/"
@@ -231,7 +239,7 @@
 
       <!-- M.Sc. Mathematics -->
       <article>
-        <h3>M.Sc. in Mathematics</h3>
+        <h3>M.Sc. in Mathematics</h3><p class="meta">2019–2021 · First Class</p>
 
         <p>
           <a href="https://www.math.tifrbng.res.in/"
@@ -259,7 +267,7 @@
 
       <!-- B.Sc. Mathematics -->
       <article>
-        <h3>B.Sc. in Mathematics</h3>
+        <h3>B.Sc. (Honours) in Mathematics</h3><p class="meta">2015–2018 · First Class</p>
 
         <p>
           <a href="https://seramporecollege.ac.in/"
@@ -292,9 +300,9 @@
 <p class="eyebrow">TOOLKIT</p><h2>Technical Skills</h2>
 <p class="section-intro">Methods and tools I have used in research or the projects linked above.</p>
 <div class="skills">
-<div><strong>Programming &amp; data</strong><span>Python · NumPy · pandas · SciPy · scikit-learn · SQL · SQLite · Python unittest · C · MATLAB</span></div>
-<div><strong>Statistical modeling</strong><span>PCA · KMeans · Gaussian hidden Markov models · Ridge regression · Random Forest · EWMA · logistic regression</span></div>
-<div><strong>Optimization &amp; evaluation</strong><span>CVXPY · covariance estimation · minimum-variance portfolios · chronological validation · fixed-cutoff forecasting · historical backtesting · leakage auditing · feature ablation · review-budget evaluation</span></div>
+<div><strong>Programming &amp; data</strong><span>Python · NumPy · pandas · SciPy · scikit-learn · SQL · SQLite · Python unittest · C++17 · C · MATLAB</span></div>
+<div><strong>Statistical modeling</strong><span>PCA · KMeans · Gaussian hidden Markov models · Ridge regression · Random Forest · EWMA · autocorrelation diagnostics · logistic regression</span></div>
+<div><strong>Optimization &amp; evaluation</strong><span>CVXPY · covariance estimation · minimum-variance portfolios · chronological validation · fixed-cutoff forecasting · historical backtesting · leakage auditing · AST-based screening · feature ablation · review-budget evaluation</span></div>
 <div><strong>Simulation &amp; sampling</strong><span>Randomized algorithms · ball walk · hit-and-run · MCMC-style sampling · numerical validation · mixed-volume computation</span></div>
 <div><strong>Mathematics</strong><span>Probability · Linear algebra · Convex geometry · Optimization · Randomized algorithms</span></div>
 <div><strong>Research tools</strong><span>Git · GitHub · Jupyter · LaTeX · SageMath · Mathematica</span></div>
@@ -304,6 +312,14 @@
 
 
 
+<section id="activities" class="section alt"><div class="container">
+<p class="eyebrow">ACADEMIC ACTIVITIES AND RECOGNITION</p><h2>Research beyond the page</h2>
+<div class="timeline">
+<article><h3>Presentations and seminar organization</h3><p>I spoke on <a href="https://www.tcs.tifr.res.in/web/events/1457">“A randomized algorithm for estimating volumes of convex bodies”</a> at TIFR STCS on 26 July 2024. I organized <a href="https://www.tcs.tifr.res.in/web/events/1498">“Randomness in Private Sequential Stateless Protocols”</a> on 6 December 2024.</p><p>My CV also records a mixed-volume presentation at the STCS Symposium in August 2025 and organization of a Catalytic Graph Algorithms student seminar in March 2026.</p></article>
+<article><h3>Schools and mathematical training</h3><p>I attended the Convex and Discrete Geometry Summer School at the Alfréd Rényi Institute in 2023, the ICTS-TIFR School on Cluster Algebras in 2018 and the ICT Mumbai / MTTS Introduction to SageMath programme in 2020.</p></article>
+<article><h3>Scholarships and qualifications</h3><p>I received the TIFR / DAE Research Scholarship (2019–2026) and DST INSPIRE Scholarship (2015–2019). My CV records JAM Mathematics (2018), JAM Mathematical Statistics (2019), the ISI M.Math admission test (2018) and CMI M.Sc. Data Science written test (2019).</p></article>
+</div><p class="note">I work in Bengali, English and Hindi. Supporting academic records and faculty references are available on request.</p>
+</div></section>
 <section id="contact" class="section"><div class="container contact">
 <p class="eyebrow">CONTACT</p><h2>Let's Connect</h2>
 <p>For quantitative research, quant and risk analysis, data science, and mathematical research opportunities.</p>
@@ -313,7 +329,7 @@
 </div></section>
 </main>
 
-<footer><div class="container">© 2026 Sourav Roy</div></footer>
+<footer><div class="container">© 2026 Sourav Roy · Portfolio checked 10 October 2026</div></footer>
 </body>
 </html>
 

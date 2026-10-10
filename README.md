@@ -2,21 +2,17 @@
 
 Live website: https://souravfrp.github.io/
 
-The portfolio presents completed experiments, current research and explicit limits. Project status was checked against the repositories on **8 October 2026**.
+I present my mathematical research, academic background and reproducible computational experiments. I checked this portfolio against my GitHub repositories on **10 October 2026**.
 
-| Project | Current evidence | Source |
-| --- | --- | --- |
-| Quant AI Market Lab | Completed v1.0.0 historical risk, forecasting and portfolio study; model scope documented | [Repository](https://github.com/Souravfrp/quant-ai-market-lab) |
-| Quant Market Lab II | October five-session baseline evaluation completed; August-original input verified; separate August and October EWMA runs frozen; November and December outcomes pending | [Repository](https://github.com/Souravfrp/quant-market-lab-ii) |
-| PaymentGuard | Baseline rankings, feature ablations, category errors and individual score explanations on the research branch | [baseline/feature-ablation](https://github.com/Souravfrp/payment-guard/tree/baseline/feature-ablation) |
-| ResearchAudit | Seven manual claim checks: six provisionally supported by code inspection, transaction costs not yet checked; numerical reproduction and agent experiments remain open | [Claim inventory](https://github.com/Souravfrp/research-audit/blob/main/claims/claim_inventory.md) |
+| Project | Current evidence |
+|---|---|
+| Quant AI Market Lab | Completed historical v1.0.0 study; retrospective model and portfolio limits remain explicit. |
+| Quant Market Lab II | October baseline evaluated; EWMA freezes preserved; autocorrelation diagnostics implemented; November/December outcomes pending. |
+| PaymentGuard | Main contains baseline, ablation, score, hypothetical review-cost and missed-case diagnostics; synthetic data and local artifact limits remain explicit. |
+| ResearchAudit | Published rule-based baseline and isolated cost checks; claim 7 has two validation gaps; full numerical reproduction and multi-agent experiments remain open. |
+| Mixed Volume Approximations | Python/C++ notebooks, exact cube comparisons and matched pilot timings; no certified mixing or accuracy guarantee. |
+| RSA Educational | Preserved original and tested educational revision; textbook RSA security limits documented. |
 
-Figures are embedded from immutable repository commits, with captions and links to their source records. The CV is a dated application snapshot, while the linked repositories remain the continuing research record.
+I also include my degrees, research reports, preprint, academic activities, scholarships, tools and contact links. My current CV is in `cv.html`, which can be printed to PDF. The existing `cv.pdf` is an earlier snapshot and is labelled accordingly. Existing research PDFs are preserved.
 
-## Website files
-
-- `index.html`: project summaries, visible results, research, education and contact details.
-- `style.css`: responsive styling, chart presentation and accessible keyboard focus.
-- Existing CV and research PDFs are preserved.
-
-This update does not merge PaymentGuard's research branch or change any underlying experiment.
+Figures have captions, provenance and links to their research accounts. Runtime measurements are not asymptotic complexity claims; test counts are not independent accuracy measurements. This update changes the portfolio presentation, not the underlying experiments.
