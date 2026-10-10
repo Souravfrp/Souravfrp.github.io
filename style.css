@@ -52,3 +52,28 @@ html { scroll-behavior: smooth; scroll-padding-top: 110px; }
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
 
 .update-strip a { color:var(--text); }
+
+/* Shared rows align paired project headings, summaries and evidence. */
+.project-grid{align-items:stretch}
+.project-grid>article.card:not(.supplementary){
+ display:grid;grid-template-columns:minmax(0,1fr);
+ grid-template-rows:subgrid;grid-row:span 7;row-gap:16px;
+}
+.project-grid>article.card:not(.supplementary)>*{margin:0;min-width:0}
+.project-grid>article.card:not(.supplementary)>.tag{align-self:start}
+.project-grid>article.card:not(.supplementary)>.result-box{align-self:stretch}
+.project-body>p{margin:0 0 16px}
+.project-body>figure{margin:0 0 20px}
+.project-body>details{margin:0 0 20px}
+.project-body>:last-child{margin-bottom:0}
+.project-grid .card-links{align-self:end;padding-top:16px;border-top:1px solid var(--line)}
+@supports not (grid-template-rows:subgrid){
+ .project-grid>article.card:not(.supplementary){display:flex;flex-direction:column;gap:16px}
+ .project-grid>article.card:not(.supplementary)>.project-body{flex:1}
+}
+@media(max-width:720px){
+ .project-grid>article.card:not(.supplementary){
+  display:flex;flex-direction:column;gap:16px;grid-row:auto;
+ }
+ .project-grid .card-links{align-self:stretch}
+}
