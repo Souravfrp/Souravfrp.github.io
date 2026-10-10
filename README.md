@@ -13,6 +13,6 @@ I present my mathematical research, academic background and reproducible computa
 | Mixed Volume Approximations | Python/C++ notebooks, exact cube comparisons and matched pilot timings; no certified mixing or accuracy guarantee. |
 | RSA Educational | Preserved original and tested educational revision; textbook RSA security limits documented. |
 
-I also include my degrees, research reports, preprint, academic activities, scholarships, tools and contact links. My current CV is in `cv.html`, which can be printed to PDF. The existing `cv.pdf` is an earlier snapshot and is labelled accordingly. Existing research PDFs are preserved.
+I also include my degrees, research reports, preprint, academic activities, scholarships, tools and contact links. My current CV is in `cv.html`, which can be printed to PDF. Existing research PDFs are preserved.
 
 Figures have captions, provenance and links to their research accounts. Runtime measurements are not asymptotic complexity claims; test counts are not independent accuracy measurements. This update changes the portfolio presentation, not the underlying experiments.
