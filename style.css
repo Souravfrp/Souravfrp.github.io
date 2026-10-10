@@ -77,3 +77,18 @@ html { scroll-behavior: smooth; scroll-padding-top: 110px; }
  }
  .project-grid .card-links{align-self:stretch}
 }
+
+/* Align prose to both edges of its content column on wider screens. */
+.hero h2{max-width:100%;line-height:1.25;text-wrap:balance}
+.hero .lead{max-width:100%}
+@media(min-width:721px){
+ .lead,.section-intro,.card p:not(.tag):not(.card-links),
+ .project-body p,.timeline p:not(.meta),.note,.contact>p{
+  text-align:justify;text-align-last:left;
+ }
+}
+@media(max-width:720px){
+ .lead,.section-intro,.card p,.timeline p,.note,.contact>p{
+  text-align:left;
+ }
+}
