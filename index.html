@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Sourav Roy — TIFR mathematics and computer and system sciences researcher moving into quantitative research, risk analytics, and data science.">
   <title>Sourav Roy | Quantitative Research & Data Science</title>
-  <link rel="stylesheet" href="style.css?v=20261010">
+  <link rel="stylesheet" href="style.css?v=20261010-aligned">
 </head>
 <body>
 <header class="nav"><div class="container nav-inner"><a class="brand" href="#home">Sourav Roy</a>
@@ -45,9 +45,11 @@
 <p class="project-question">Can I measure market risk and compare forecasting and portfolio decisions honestly?</p>
 <p>I studied eight ETFs using validated returns, PCA, KMeans, Gaussian HMMs, Ridge, Random Forest and long-only minimum-variance portfolios. Chronological comparisons and explicit trading timing keep the experiments tied to the information available at each decision.</p>
 <div class="result-box"><strong>Ridge: 0.3201 percentage-point MAE</strong><span>Random Forest: 0.3443 on the same 565 historical forecasts of five-session SPY log-return RMS.</span></div>
+<div class="project-body">
 <figure><a href="https://github.com/Souravfrp/quant-ai-market-lab/blob/main/results/portfolio_research_overview.png"><img src="https://raw.githubusercontent.com/Souravfrp/quant-ai-market-lab/da89cad2e87a5e1c6d8c07e37131a020e24ae21d/results/portfolio_research_overview.png" alt="Historical portfolio research overview comparing minimum-variance strategies with benchmarks." loading="lazy"></a><figcaption>Historical portfolio comparison. Open the chart for its full labels and scale.</figcaption></figure>
 <p><strong>What I learned:</strong> Minimum-variance portfolios had lower realized volatility in the reported subperiods, while equal-weight and SPY finished with higher wealth in the zero-cost full-period comparison. Lower risk did not mean higher return.</p>
 <p class="scope"><strong>Scope:</strong> Retrospective evidence, with documented costs, numerical checks and model limits. It does not establish a profitable live strategy or identify the best future ETF.</p>
+</div>
 <p class="card-links"><a href="https://github.com/Souravfrp/quant-ai-market-lab">Code and findings →</a><a href="https://github.com/Souravfrp/quant-ai-market-lab/blob/main/docs/portfolio_mathematics_and_validation.md">Mathematics and validation →</a><a href="https://github.com/Souravfrp/quant-ai-market-lab/blob/main/docs/model_scope_and_limitations.md">What the models can answer →</a></p>
 </article>
 <article class="card" id="market-lab-ii">
@@ -56,12 +58,14 @@
 <p class="project-question">What happens when I preserve a forecast and wait for its target window?</p>
 <p>I preserved 12 September–December baseline forecasts using a 31 August cutoff. The October 1, 2, 5, 6 and 7 window is now complete: I compared the frozen predictions with observed returns and reconciled the displayed prices with full-precision Yahoo data.</p>
 <div class="result-box"><strong>Observed October daily RMS: 0.5263%</strong><span>Rolling-20: 0.5780% · Ridge: 0.8118% · Constant: 0.8791%. All three overpredicted; rolling-20 was closest in this window.</span></div>
+<div class="project-body">
 <figure><a href="https://github.com/Souravfrp/quant-market-lab-ii/blob/main/results/figures/october_2026_baseline_evaluation.png"><img src="https://raw.githubusercontent.com/Souravfrp/quant-market-lab-ii/9d686a085f095f857af3d24ecf1a0df439294b16/results/figures/october_2026_baseline_evaluation.png" alt="Frozen October risk forecasts compared with the observed five-session RMS." loading="lazy"></a><figcaption>Archived October evaluation using displayed adjusted closes. Full-precision Yahoo reconciliation confirms 0.5263% and the same closest method.</figcaption></figure>
 <p><strong>Next experiment, now implemented:</strong> EWMA extends the existing rolling-RMS experiment with decaying weights. I froze separate runs through 31 August and 7 October, verified the preserved original August CSV by its hash, and also tested an EWMA feature in Ridge.</p>
 <details><summary>See the November and December forecast record</summary><div class="table-wrap"><table><caption>Daily RMS forecasts from the 7 October cutoff</caption><thead><tr><th>Target sessions</th><th>EWMA</th><th>Ridge + EWMA</th></tr></thead><tbody><tr><td>2–6 November</td><td>0.5287%</td><td>0.7430%</td></tr><tr><td>1–7 December</td><td>0.5287%</td><td>0.8169%</td></tr></tbody></table></div><figure><a href="https://github.com/Souravfrp/quant-market-lab-ii/blob/main/forecasts/2026-10-08-ewma-august-original-verified/figures/historical_mae.png"><img src="https://raw.githubusercontent.com/Souravfrp/quant-market-lab-ii/9d686a085f095f857af3d24ecf1a0df439294b16/forecasts/2026-10-08-ewma-august-original-verified/figures/historical_mae.png" alt="Historical mean absolute errors for baseline and EWMA models on 44 matched forecast windows." loading="lazy"></a><figcaption>Historical comparison from the verified original August dataset; future outcomes remain pending.</figcaption></figure><p>The augmented model has lower measured error in the historical comparison. The future windows remain pending. Newly calculated September/October EWMA results are retrospective; the earlier baseline forecasts retain their original timestamps.</p></details>
 <p><strong>Why I checked autocorrelation next:</strong> In the preserved August history, lag-1 ACF is -0.116 for signed returns, 0.420 for squared returns and 0.352 for absolute returns. I examine persistence in move size using existing data, without adding a forecasting model or changing frozen forecasts.</p>
 <figure><a href="https://github.com/Souravfrp/quant-market-lab-ii/blob/main/docs/autocorrelation_analysis.md"><img src="https://raw.githubusercontent.com/Souravfrp/quant-market-lab-ii/caad5f82064e835ddf8f12e192c5979fc5e29748/results/autocorrelation_2026-10-10/figures/acf.svg" alt="Signed, squared and absolute SPY return autocorrelation from the preserved August dataset." loading="lazy"></a><figcaption>The reference band is a rough white-noise guide. Persistence does not establish forecast superiority; non-overlapping targets do not guarantee independence.</figcaption></figure>
 <p class="scope"><strong>Scope:</strong> Five-session risk forecasts, not price direction or whole-month volatility. One completed window cannot establish a consistently better model; download vintages and freeze dates are recorded explicitly.</p>
+</div>
 <p class="card-links"><a href="https://github.com/Souravfrp/quant-market-lab-ii">Code and forecast record →</a><a href="https://github.com/Souravfrp/quant-market-lab-ii/blob/main/docs/ewma_freeze_2026-10-08.md">EWMA equations, graphs and freezes →</a><a href="https://github.com/Souravfrp/quant-market-lab-ii/blob/main/docs/model_scope_and_limitations.md">Model scope →</a></p>
 </article>
 <article class="card" id="paymentguard">
@@ -70,10 +74,12 @@
 <p class="project-question">Which transactions should receive attention when review capacity is limited?</p>
 <p>I prepared 1.09 million synthetic AMLNet v2 transactions, checked nested metadata for leakage, verified the SQLite import and compared interpretable ranking baselines on a chronological validation period.</p>
 <div class="result-box"><strong>196 of 202 fraud labels found at a 1% review budget</strong><span>Log-amount logistic regression: 97.03% recall, 11.67% precision; 1,680 reviews include 1,484 false positives.</span></div>
+<div class="project-body">
 <figure><a href="https://github.com/Souravfrp/payment-guard/blob/main/results/figures/paymentguard_model_overview.png"><img src="https://raw.githubusercontent.com/Souravfrp/payment-guard/27b9076294e87f5c98fc5b5bba45fcce7d2e30e2/results/figures/paymentguard_model_overview.png" alt="PaymentGuard validation overview showing model rankings, review workload and feature-removal comparisons." loading="lazy"></a><figcaption>Synthetic-data validation: performance must be read alongside workload and dependence on the available features.</figcaption></figure>
 <p><strong>What I checked next:</strong> Removing the transaction-category feature reduced caught fraud labels from 196 to 130 at the same budget. I examined category-level errors and reconstructed two individual scores near the review cutoff. These experiments expose feature dependence rather than proving generalization.</p>
 <p class="branch-note">The current main branch includes feature ablations, score explanations and exploratory review-cost, transaction-value and six missed-case analyses; 72 tests were reported passing. Row-level data and model artifacts remain local.</p>
 <p class="scope"><strong>What I examined next:</strong> Hypothetical review costs and cost-ratio sensitivity. These do not demonstrate realized savings or a live decision policy. Calibration, drift and final-period evaluation remain open. This is synthetic-data research; the final period was visible in an earlier audit, so it is not an untouched holdout.</p>
+</div>
 <p class="card-links"><a href="https://github.com/Souravfrp/payment-guard">Latest research →</a><a href="https://github.com/Souravfrp/payment-guard/blob/main/docs/feature_ablation_results.md">Feature-removal findings →</a><a href="https://github.com/Souravfrp/payment-guard/blob/main/docs/visual_results_guide.md">Charts and score explanations →</a></p>
 </article>
 <article class="card" id="researchaudit">
@@ -82,9 +88,11 @@
 <p class="project-question">What evidence supports a research claim, and what still needs checking?</p>
 <p>I froze Quant AI Market Lab v1.0.0 and built a Python rule-based checker that screens source patterns, records file coverage and produces reviewable reports. I also tested its isolated transaction-cost function.</p>
 <div class="result-box"><strong>34 Python files screened · 52 test methods passed</strong><span>10 candidate findings were triaged. Twenty designed examples run within one test; these are not independent detection-accuracy measurements.</span></div>
+<div class="project-body">
 <p><strong>What I found:</strong> Claim 7 is supported for the tested cases, with two input-validation gaps: near-unit weight sums can overallocate, and two-dimensional weights can trigger broadcasting. I preserved the audited source and added tests that record these behaviours.</p>
 <p>The other six claims retain their provisional source-inspection labels. I confirmed no look-ahead error at the flagged locations; that does not certify the entire project as leakage-free.</p>
 <p class="scope"><strong>Limits and next step:</strong> I have not reproduced the full backtest numerical results or implemented the proposed multi-agent system. Variable-valued settings, aliased split imports and some seed paths remain checker blind spots. I need independent labelled cases and a second frozen target before claiming broader audit reliability.</p>
+</div>
 <p class="card-links"><a href="https://github.com/Souravfrp/research-audit">Published baseline →</a><a href="https://github.com/Souravfrp/research-audit/blob/main/claims/claim_07_transaction_costs.md">Claim 7 evidence and gaps →</a><a href="https://github.com/Souravfrp/research-audit/blob/main/docs/rule_based_checker.md">Rules and limitations →</a><a href="https://github.com/Souravfrp/research-audit/blob/main/results/rule_checker_triage.md">Reviewed findings →</a></p>
 </article>
 <article class="card supplementary" id="mixed-volume">
