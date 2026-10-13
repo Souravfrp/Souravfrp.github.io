@@ -36,7 +36,22 @@ jobs:
               assert term.lower() in full_text.lower(), f"Missing CV text: {term}"
           assert all(abs(p.rect.width - 595.2756) < 1 and abs(p.rect.height - 841.8898) < 1 for p in pdf), "Pages must be A4"
           links = [lnk for p in pdf for lnk in p.get_links() if lnk.get("uri")]
-          assert len(links) >= 8, f"Expected active PDF hyperlinks; found {len(links)}"
+          assert len(links) >= 10, f"Expected active PDF hyperlinks; found {len(links)}"
+          uris = [link["uri"] for link in links]
+          assert all(uri.startswith(("https://", "mailto:")) for uri in uris), f"Unsafe/unusable local URI found: {uris}"
+          required = [
+              "https://github.com/Souravfrp/quant-ai-market-lab",
+              "https://github.com/Souravfrp/quant-market-lab-ii",
+              "https://github.com/Souravfrp/payment-guard",
+              "https://github.com/Souravfrp/research-audit",
+              "https://github.com/Souravfrp/estimates-of-mixed-volume-components",
+              "https://github.com/Souravfrp/rsa-educational",
+              "https://arxiv.org/abs/2508.19582",
+              "https://souravfrp.github.io/Mixed_volume_thesis_pdf.pdf",
+              "https://souravfrp.github.io/research/permanents_graph_laplacians_2022.pdf",
+          ]
+          for target in required:
+              assert target in uris, f"Expected link not embedded in PDF: {target}"
           body_sizes = [s["size"] for p in pdf for b in p.get_text("dict")["blocks"] if b["type"] == 0 for line in b["lines"] for s in line["spans"]]
           assert min(body_sizes) >= 9, f"Too-small printed text: {min(body_sizes)}pt"
           for p in pdf:
