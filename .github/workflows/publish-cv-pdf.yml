@@ -1,0 +1,57 @@
+name: Publish print-ready CV PDF
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - cv.html
+      - .github/workflows/publish-cv-pdf.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install PDF renderer and validator
+        run: |
+          python -m pip install "weasyprint==66.0" "pymupdf==1.26.5"
+      - name: Render CV as fixed A4 PDF
+        run: weasyprint cv.html Sourav_Roy_CV.pdf
+      - name: Validate CV readability and links
+        run: |
+          python - <<'PY'
+          import fitz
+          path = "Sourav_Roy_CV.pdf"
+          pdf = fitz.open(path)
+          assert 2 <= len(pdf) <= 7, f"Unexpected page count: {len(pdf)}"
+          full_text = "".join(p.get_text() for p in pdf)
+          for term in ["SOURAV ROY", "Quant AI Market Lab", "PaymentGuard", "EDUCATION", "Mixed Volume"]:
+              assert term.lower() in full_text.lower(), f"Missing CV text: {term}"
+          assert all(abs(p.rect.width - 595.2756) < 1 and abs(p.rect.height - 841.8898) < 1 for p in pdf), "Pages must be A4"
+          links = [lnk for p in pdf for lnk in p.get_links() if lnk.get("uri")]
+          assert len(links) >= 8, f"Expected active PDF hyperlinks; found {len(links)}"
+          body_sizes = [s["size"] for p in pdf for b in p.get_text("dict")["blocks"] if b["type"] == 0 for line in b["lines"] for s in line["spans"]]
+          assert min(body_sizes) >= 9, f"Too-small printed text: {min(body_sizes)}pt"
+          for p in pdf:
+              for b in p.get_text("blocks"):
+                  if b[6] != 0: continue
+                  assert b[0] >= 35 and b[2] <= p.rect.width-35, "Text outside left/right safe area"
+                  assert b[1] >= 35 and b[3] <= p.rect.height-35, "Text outside top/bottom safe area"
+          print(f"Validated {len(pdf)} A4 pages, {len(links)} hyperlinks, minimum text {min(body_sizes):.1f}pt")
+          PY
+      - name: Commit generated CV PDF
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Sourav_Roy_CV.pdf
+          if ! git diff --cached --quiet; then
+            git commit -m "Updated print-ready CV PDF"
+            git push
+          fi
