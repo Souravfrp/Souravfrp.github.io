@@ -32,7 +32,7 @@ jobs:
           pdf = fitz.open(path)
           assert 2 <= len(pdf) <= 7, f"Unexpected page count: {len(pdf)}"
           full_text = "".join(p.get_text() for p in pdf)
-          for term in ["SOURAV ROY", "Quant AI Market Lab", "PaymentGuard", "EDUCATION", "Mixed Volume"]:
+          for term in ["SOURAV ROY", "Quant AI Market Lab", "Payment Guard", "EDUCATION", "Mixed Volume"]:
               assert term.lower() in full_text.lower(), f"Missing CV text: {term}"
           assert all(abs(p.rect.width - 595.2756) < 1 and abs(p.rect.height - 841.8898) < 1 for p in pdf), "Pages must be A4"
           links = [lnk for p in pdf for lnk in p.get_links() if lnk.get("uri")]
