@@ -92,3 +92,16 @@ html { scroll-behavior: smooth; scroll-padding-top: 110px; }
   text-align:left;
  }
 }
+
+/* Public repository directory: same visual system as the project cards. */
+.repo-directory{margin-top:32px;padding:28px;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+.repo-directory h3{font-size:1.45rem;margin:0 0 12px;color:var(--text)}
+.repo-directory>p:not(.eyebrow){color:var(--muted);margin:0 0 20px}
+.repo-directory ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;list-style:none;margin:0;padding:0}
+.repo-directory li{border:1px solid var(--line);border-radius:9px;padding:14px;background:var(--panel2);min-width:0}
+.repo-directory li a{display:block;font-weight:700;color:var(--text);text-decoration:none}
+.repo-directory li a:hover{text-decoration:underline}
+.repo-directory li span{display:block;margin-top:6px;font-size:.87rem;color:var(--muted);line-height:1.4}
+.repo-directory code{font-size:.85em}
+#repositories{scroll-margin-top:105px}
+@media(max-width:720px){.repo-directory{padding:20px}.repo-directory ul{grid-template-columns:1fr}}
