@@ -14,20 +14,20 @@ This is the source for my public portfolio and HTML CV. I reconciled the project
 | [ResearchAudit](https://github.com/Souravfrp/research-audit) | Rule-based AST screening baseline (34 files), isolated transaction-cost claim checks and 52 test methods | Multi-agent system, full backtest reproduction and independent detection accuracy remain open |
 | [Mixed Volume Approximations](https://github.com/Souravfrp/estimates-of-mixed-volume-components) | Thesis-connected Python/C++ random-walk/numerical sampling experiments, exact cube comparisons and pilot timings | Finite experiments do not certify theoretical oracle/mixing/accuracy guarantees |
 | [RSA Educational](https://github.com/Souravfrp/rsa-educational) | Preserved 2019 educational RSA implementation and tested 2026 revision | Textbook educational example, not secure production cryptography |
-| [Portfolio website source](https://github.com/Souravfrp/Souravfrp.github.io) | This repository: `index.html`, `style.css`, `cv.html` and preserved academic PDFs | The pre-existing downloadable PDF CV is an earlier snapshot; the HTML CV reflects the latest Payment Guard milestone |
+| [Portfolio website source](https://github.com/Souravfrp/Souravfrp.github.io) | This repository: `index.html`, `style.css`, `cv.html` and preserved academic PDFs | The downloadable PDF CV was regenerated automatically from the current HTML CV and passed the site's PDF validation checks |
 
 ## Payment Guard: latest merged research
 
 The [final research account](https://github.com/Souravfrp/payment-guard/blob/main/docs/final_holdout_first_results.md) reports **253,190** synthetic March–April 2026 test transactions and **278** positive labels. At the frozen 1% review budget (**2,532** review slots/model), XGBoost captured **267** positives and logistic regression **254** (**+13** captured labels; 96.04% versus 91.37% recall). Logistic led at the smaller 0.1% budget (225 versus 222 positives). The [recruiter-facing interpretation](https://github.com/Souravfrp/payment-guard/blob/main/docs/what_this_project_can_and_cannot_claim.md) clearly separates demonstrated skills/results from unsupported production or real-world claims.
 
-The homepage includes a seven-repository source directory, project statuses, scope/limitation statements, evidence links and representative figures. The site's HTML CV was refreshed for Payment Guard, but **the existing `Sourav_Roy_CV.pdf` was not regenerated** and is marked as an earlier snapshot rather than represented as the current CV.
+The homepage includes a seven-repository source directory, project statuses, scope/limitation statements, evidence links and representative figures. The site's HTML CV and **`Sourav_Roy_CV.pdf`** were refreshed for Payment Guard. The GitHub Actions PDF workflow passed its A4, text, hyperlink and safe-margin checks.
 
 ## Website maintenance
 
 - Website markup and project evidence: [`index.html`](index.html)
 - Site styles and mobile layout: [`style.css`](style.css)
 - Current HTML CV: [`cv.html`](cv.html)
-- Archived downloadable PDF CV and research reports are preserved as-is.
+- The downloadable PDF CV is generated from `cv.html` by GitHub Actions and validated before commit; the original research report PDFs remain preserved.
 - GitHub Pages serves this repository through its existing deployment. Changes to code on `main` need to complete publication before they appear on the live URL.
 
 This is a **portfolio presentation update, not a change to the underlying research experiments**. Frozen holdouts, forward forecasts, verification records and historical reports have not been modified.
