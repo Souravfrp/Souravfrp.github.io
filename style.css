@@ -21,7 +21,7 @@ footer{padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 
 /* Current research: evidence first, with readable figures and explicit scope. */
 html { scroll-behavior: smooth; scroll-padding-top: 110px; }
-.update-strip { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:28px 0 32px; }
+.update-strip { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:12px; margin:28px 0 32px; }
 .update-strip a { padding:18px; border:1px solid var(--line); border-radius:12px; text-decoration:none; background:var(--panel); }
 .update-strip strong, .update-strip span, .result-box strong, .result-box span { display:block; }
 .update-strip span { font-size:.85rem; color:var(--muted); margin-top:6px; }
@@ -105,3 +105,9 @@ html { scroll-behavior: smooth; scroll-padding-top: 110px; }
 .repo-directory code{font-size:.85em}
 #repositories{scroll-margin-top:105px}
 @media(max-width:720px){.repo-directory{padding:20px}.repo-directory ul{grid-template-columns:1fr}}
+
+/* Discoverable research website and repository links, October 2026. */
+.section-intro a{color:var(--text);text-underline-offset:3px}
+.repo-directory li a.demo-link{display:inline-block;margin-top:9px;font-size:.83rem;color:#acd0ff;text-decoration:underline;text-underline-offset:3px}
+#random-walks{scroll-margin-top:110px}
+@media(max-width:900px){.update-strip a:last-child:nth-child(odd){grid-column:1/-1}}

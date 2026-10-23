@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sourav Roy — mathematics, randomized algorithms, quantitative research and data science. Verified Python, SQL and machine-learning projects covering market research, synthetic payment-risk ranking, computational geometry, code auditing and RSA.">
+  <meta name="description" content="Sourav Roy — mathematics, randomized algorithms, quantitative research and data science. Research projects in random walks, sampling algorithms, Python/C++, convex geometry, market risk, synthetic payment-risk ranking and computational auditing.">
   <title>Sourav Roy | Quantitative Research & Data Science</title>
-  <link rel="stylesheet" href="style.css?v=20261021-portfolio-update">
+  <link rel="stylesheet" href="style.css?v=20261023-random-walks">
 </head>
 <body>
 <header class="nav"><div class="container nav-inner"><a class="brand" href="#home">Sourav Roy</a>
@@ -30,14 +30,15 @@
 
 <section id="projects" class="section alt">
 <div class="container">
-<p class="eyebrow">PUBLIC PROJECTS · SOURCE-CHECKED 21 OCTOBER 2026</p>
+<p class="eyebrow">PUBLIC PROJECTS · RANDOM WALKS ADDED 23 OCTOBER 2026</p>
 <h2>Questions, experiments and evidence</h2>
-<p class="section-intro">These six project entries link to the currently published GitHub repositories and distinguish completed research milestones from ongoing experiments. For each project I show measured results, implementation evidence and limits on what the result means. The <a href="cv.html">HTML CV</a> and downloadable A4 PDF reflect the updated Payment Guard research; the PDF was regenerated and validated by the site's publication workflow.</p>
+<p class="section-intro">These seven project entries link to the currently published GitHub repositories and distinguish completed research milestones from ongoing experiments. For each project I show measured results, implementation evidence and limits on what the result means. The <a href="cv.html">HTML CV</a> and downloadable A4 PDF reflect the updated Payment Guard research; the PDF was regenerated and validated by the site's publication workflow.</p>
 <div class="update-strip" aria-label="Current project milestones">
 <a href="#market-lab"><strong>Market risk</strong><span>Completed historical study</span></a>
 <a href="#market-lab-ii"><strong>Frozen forecasts</strong><span>EWMA frozen · ACF diagnosed</span></a>
 <a href="#paymentguard"><strong>Payment risk</strong><span>Frozen holdout complete · 186 tests</span></a>
 <a href="#researchaudit"><strong>Research checks</strong><span>Rule-based baseline published</span></a>
+<a href="#random-walks"><strong>Random walks</strong><span>Python/C++ + live research website</span></a>
 </div>
 <div class="grid project-grid">
 <article class="card" id="market-lab">
@@ -96,6 +97,28 @@
 </div>
 <p class="card-links"><a href="https://github.com/Souravfrp/research-audit">Published baseline →</a><a href="https://github.com/Souravfrp/research-audit/blob/main/claims/claim_07_transaction_costs.md">Claim 7 evidence and gaps →</a><a href="https://github.com/Souravfrp/research-audit/blob/main/docs/rule_based_checker.md">Rules and limitations →</a><a href="https://github.com/Souravfrp/research-audit/blob/main/results/rule_checker_triage.md">Reviewed findings →</a></p>
 </article>
+<article class="card supplementary" id="random-walks">
+<p class="tag">COMPUTATIONAL CONVEX GEOMETRY · PYTHON / C++17 · INTERACTIVE WEBSITE</p>
+<h3>Experiments on Random Walks</h3>
+<p class="project-question">How do five random walks spread through a high-dimensional cube, and how do convergence diagnostics and computational cost change with dimension?</p>
+<p>I implemented Ball Walk, Dikin Walk, Coordinate Hit-and-Run, Random Hit-and-Run and a cube-specialized John's Walk from the origin of the centred <em>n</em>-dimensional cube. I retain separate, explicit and optimized Python/C++17 implementations so that the mathematical transition rules remain readable alongside the computational comparisons.</p>
+<div class="result-box"><strong>Five sampling rules · original and optimized implementations · dimension studies</strong><span>Published comparisons for dimensions 1–10, with separate n=20 examples. I distinguish empirical discrepancy checkpoints, time per transition and estimated cost to reach a chosen diagnostic threshold.</span></div>
+<div class="project-body">
+<figure>
+<a href="https://github.com/Souravfrp/Experiments-on-Random-Walks/blob/main/figures/dimension_study/n1_to_n10_convergence_python_cpp.svg" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/Souravfrp/Experiments-on-Random-Walks/b70532e09aa2d3bd3a513d400dea7617cdbaa42b/figures/dimension_study/n1_to_n10_convergence_python_cpp.svg" alt="Two charts of empirical convergence checkpoints for five cube random walks across dimensions one to ten in explicit Python and C++17." loading="lazy"></a>
+<figcaption>Empirical convergence checkpoints for five walks and dimensions 1–10, reported from Mac experiments. The displayed checkpoints use a diagnostic criterion, not a certified total-variation mixing time. Open the graph for its axes and source references.</figcaption>
+</figure>
+<p><strong>Interactive research website:</strong> Visitors can choose a dimension, number of chains, steps, seed and random walk, then calculate new endpoint distributions and empirical diagnostics directly in the browser. This uses a separately implemented JavaScript engine, not the native Python or C++ executables.</p>
+<p><strong>Numerical interpretation:</strong> Coordinate Hit-and-Run offers an exact total-variation reference from the origin through the coupon-collector identity. For the other walks, marginal and pairwise-sum KS diagnostics and moment errors provide empirical evidence, not proofs of convergence in the full joint law.</p>
+<p class="scope"><strong>Scope:</strong> Source-labelled Mac measurements, development examples and browser-generated experiments remain distinct. Optimizations such as NumPy batching, C++ memory reuse, compiler flags and threading can affect throughput without changing theoretical mixing guarantees.</p>
+</div>
+<p class="card-links">
+<a href="https://souravfrp.github.io/Experiments-on-Random-Walks/#run-experiment" target="_blank" rel="noopener noreferrer">Run an experiment on the research website →</a>
+<a href="https://github.com/Souravfrp/Experiments-on-Random-Walks" target="_blank" rel="noopener noreferrer">Python/C++ source and README →</a>
+<a href="https://github.com/Souravfrp/Experiments-on-Random-Walks/blob/main/docs/01_MATHEMATICAL_METHODS.md" target="_blank" rel="noopener noreferrer">Mathematical methods →</a>
+<a href="https://souravfrp.github.io/Experiments-on-Random-Walks/#results" target="_blank" rel="noopener noreferrer">Explore published results →</a>
+</p>
+</article>
 <article class="card supplementary" id="mixed-volume">
 <p class="tag">PYTHON AND C++ EXPERIMENTS · FROZEN OCTOBER CHECKPOINT</p>
 <h3>Mixed Volume Approximations</h3>
@@ -112,7 +135,7 @@
 </article>
 </div>
 <aside id="repositories" class="repo-directory" aria-labelledby="repo-list-title">
-<p class="eyebrow">GITHUB PROJECT DIRECTORY · SEVEN PUBLIC REPOSITORIES</p>
+<p class="eyebrow">GITHUB PROJECT DIRECTORY · EIGHT PUBLIC REPOSITORIES</p>
 <h3 id="repo-list-title">Explore every public repository</h3>
 <p>Each project link opens the repository's current <code>main</code> branch. I keep completed studies separate from experiments still awaiting outcomes.</p>
 <ul>
@@ -120,6 +143,7 @@
 <li><a href="https://github.com/Souravfrp/quant-market-lab-ii">Quant Market Lab II</a><span>Frozen prospective risk forecasts · October evaluated; later outcomes pending</span></li>
 <li><a href="https://github.com/Souravfrp/payment-guard">Payment Guard</a><span>Synthetic fraud-review ranking · frozen final experiment completed</span></li>
 <li><a href="https://github.com/Souravfrp/research-audit">ResearchAudit</a><span>AST/rule-based research checker · multi-agent implementation pending</span></li>
+<li><a href="https://github.com/Souravfrp/Experiments-on-Random-Walks">Experiments on Random Walks</a><span>Five cube walks · explicit and optimized Python/C++ · dimension comparisons</span><a class="demo-link" href="https://souravfrp.github.io/Experiments-on-Random-Walks/#run-experiment">Interactive experiment website ↗</a></li>
 <li><a href="https://github.com/Souravfrp/estimates-of-mixed-volume-components">Mixed Volume Approximations</a><span>Python/C++ numerical experiments · theoretical-versus-empirical limits documented</span></li>
 <li><a href="https://github.com/Souravfrp/rsa-educational">RSA Educational</a><span>2019 original preserved · tested 2026 educational revision</span></li>
 <li><a href="https://github.com/Souravfrp/Souravfrp.github.io">This portfolio's source</a><span>Public GitHub Pages website and HTML CV</span></li>
@@ -131,6 +155,7 @@
 
     <p class="eyebrow">RESEARCH</p>
     <h2>Featured Research</h2>
+    <p class="section-intro">Alongside my theoretical research, I have published a <a href="#random-walks">computational study of five random walks</a> with an <a href="https://souravfrp.github.io/Experiments-on-Random-Walks/#run-experiment" target="_blank" rel="noopener noreferrer">interactive research website</a> and fully accessible Python/C++ source.</p>
 
 
     <!-- PUBLICATION -->
@@ -354,7 +379,7 @@
 </div></section>
 </main>
 
-<footer><div class="container">© 2026 Sourav Roy · Project portfolio checked against public GitHub main branches 21 October 2026</div></footer>
+<footer><div class="container">© 2026 Sourav Roy · Random Walks project added 23 October 2026; earlier portfolio research checked 21 October 2026</div></footer>
 </body>
 </html>
 
