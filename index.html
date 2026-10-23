@@ -4,18 +4,61 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Sourav Roy — mathematics, computer and system sciences, randomized algorithms, convex geometry and computational research. Projects in Python, C++, random walks, data science, risk analytics and finance.">
-  <title>Sourav Roy | Mathematics, Computer Science & Research</title>
-  <link rel="stylesheet" href="style.css?v=20261023-compact-research">
+  <title>Sourav Roy | Mathematics & Algorithms → Quantitative Research & Data Science</title>
+  <link rel="stylesheet" href="style.css?v=20261024-navigation">
+  <script src="nav.js" defer></script>
 </head>
 <body>
-<header class="nav"><div class="container nav-inner"><a class="brand" href="#home">Sourav Roy</a>
-<nav aria-label="Main navigation"><a href="#projects">Projects</a><a href="#repositories">Repositories</a><a href="#research">Research</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav></div></header>
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#home">Sourav Roy</a>
+    <nav aria-label="Main navigation" class="main-nav">
+      <div class="nav-item">
+        <a href="#projects">Projects</a><button class="nav-toggle" type="button" aria-label="Show project shortcuts" aria-expanded="false" aria-controls="nav-projects">▾</button>
+        <div class="nav-menu" id="nav-projects" aria-label="Project shortcuts">
+          <a href="#market-lab">Quant AI Market Lab</a>
+          <a href="#market-lab-ii">Quant Market Lab II</a>
+          <a href="#paymentguard">Payment Guard</a>
+          <a href="#researchaudit">ResearchAudit</a>
+          <a href="#random-walks">Random Walks</a>
+          <a href="#mixed-volume">Mixed Volume Approximations</a>
+          <a href="#rsa-educational">RSA Educational</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#repositories">Repositories</a><button class="nav-toggle" type="button" aria-label="Show repository shortcuts" aria-expanded="false" aria-controls="nav-repositories">▾</button>
+        <div class="nav-menu" id="nav-repositories" aria-label="Repository directory shortcuts">
+          <a href="#repositories">All repositories at a glance</a>
+          <a href="#repo-quant-ai">Quant AI Market Lab</a>
+          <a href="#repo-quant-ii">Quant Market Lab II</a>
+          <a href="#repo-payment">Payment Guard</a>
+          <a href="#repo-audit">ResearchAudit</a>
+          <a href="#repo-random">Random Walks</a>
+          <a href="#repo-mixed">Mixed Volume Approximations</a>
+          <a href="#repo-rsa">RSA Educational</a>
+          <a href="#repo-portfolio">Website source</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#research">Research</a><button class="nav-toggle" type="button" aria-label="Show research shortcuts" aria-expanded="false" aria-controls="nav-research">▾</button>
+        <div class="nav-menu" id="nav-research" aria-label="Research areas">
+          <a href="#research-papers">Theoretical research &amp; papers</a>
+          <a href="#computational-research">Computational research</a>
+          <a href="https://souravfrp.github.io/Experiments-on-Random-Walks/" target="_blank" rel="noopener noreferrer">Random Walks experiments ↗</a>
+          <a href="https://souravfrp.github.io/Experiments-on-Random-Walks/mixed-volumes.html" target="_blank" rel="noopener noreferrer">Mixed Volume lab ↗</a>
+        </div>
+      </div>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
 <main>
 <section id="home" class="hero container">
-<p class="eyebrow">MATHEMATICS · COMPUTER SCIENCE · ALGORITHMS · DATA</p>
+<p class="eyebrow hero-direction">MATHEMATICS &amp; ALGORITHMS <span aria-hidden="true">→</span> QUANTITATIVE RESEARCH &amp; DATA SCIENCE</p>
 <h1>Sourav Roy</h1>
-<h2>Mathematics, computer science and computational research</h2>
 <div class="hero-research-links">
 <a class="hero-mini-link" href="https://souravfrp.github.io/Experiments-on-Random-Walks/#run-experiment" target="_blank" rel="noopener noreferrer">
 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
@@ -137,9 +180,9 @@
 <p>I implement numerical versions of the oracle framework from my master's thesis for a centered cube plus a scaled Euclidean ball. I compare volume and mixed-volume estimates with exact cube formulas, then compare Python and C++ calculation time under matched settings.</p>
 <figure><a href="https://github.com/Souravfrp/estimates-of-mixed-volume-components/blob/main/results/dimension_comparison.svg"><img src="https://raw.githubusercontent.com/Souravfrp/estimates-of-mixed-volume-components/6cc23eb688a71d890b364fe3e589498e085d2d49/results/dimension_comparison.svg" alt="Python and C++ pilot comparison showing measured calculation time and relative volume error as dimension changes." loading="lazy"></a><figcaption>Matched pilot: dimensions 7, 9 and 11 at lambda 1.5, three seeds. Measurements came from the recorded development environment, not my Mac. Measured runtime is not asymptotic complexity.</figcaption></figure>
 <p class="scope">My theoretical framework uses stated ideal-oracle assumptions. These finite-walk, floating-point experiments do not establish certified mixing or accuracy guarantees and do not assess the validity of my theorem or proof. A faster implementation does not remove sampling uncertainty.</p>
-<p class="card-links"><a href="https://github.com/Souravfrp/estimates-of-mixed-volume-components">Notebooks, C++ and benchmark records →</a><a href="https://souravfrp.github.io/Experiments-on-Random-Walks/#mixed-volume-lab" target="_blank" rel="noopener noreferrer">Try the independent-sampling mixed-volume demonstration ↗</a></p>
+<p class="card-links"><a href="https://github.com/Souravfrp/estimates-of-mixed-volume-components">Notebooks, C++ and benchmark records →</a><a href="https://souravfrp.github.io/Experiments-on-Random-Walks/mixed-volumes.html" target="_blank" rel="noopener noreferrer">Try the independent-sampling mixed-volume demonstration ↗</a></p>
 </article>
-<article class="card supplementary">
+<article class="card supplementary" id="rsa-educational">
 <p class="tag">2019 PROJECT · REVISED 2026</p><h3>RSA Educational Project</h3>
 <p>My INSPIRE Summer Project implemented RSA key generation, encryption and decryption for an ASCII message. I preserve the 2019 original alongside a tested 2026 revision and explain the number theory and security limitations.</p>
 <p class="card-links"><a href="https://github.com/Souravfrp/rsa-educational">Original, revision and tests →</a></p>
@@ -150,14 +193,14 @@
 <h3 id="repo-list-title">Explore every public repository</h3>
 <p>Each project link opens the repository's current <code>main</code> branch. I keep completed studies separate from experiments still awaiting outcomes.</p>
 <ul>
-<li><a href="https://github.com/Souravfrp/quant-ai-market-lab">Quant AI Market Lab</a><span>Historical market/portfolio study · completed v1.0.0</span></li>
-<li><a href="https://github.com/Souravfrp/quant-market-lab-ii">Quant Market Lab II</a><span>Frozen prospective risk forecasts · October evaluated; later outcomes pending</span></li>
-<li><a href="https://github.com/Souravfrp/payment-guard">Payment Guard</a><span>Synthetic fraud-review ranking · frozen final experiment completed</span></li>
-<li><a href="https://github.com/Souravfrp/research-audit">ResearchAudit</a><span>AST/rule-based research checker · multi-agent implementation pending</span></li>
-<li><a href="https://github.com/Souravfrp/Experiments-on-Random-Walks">Experiments on Random Walks</a><span>Five cube walks · explicit and optimized Python/C++ · dimension comparisons</span><a class="demo-link" href="https://souravfrp.github.io/Experiments-on-Random-Walks/#run-experiment">Interactive experiment website ↗</a></li>
-<li><a href="https://github.com/Souravfrp/estimates-of-mixed-volume-components">Mixed Volume Approximations</a><span>Python/C++ numerical experiments · theoretical-versus-empirical limits documented</span></li>
-<li><a href="https://github.com/Souravfrp/rsa-educational">RSA Educational</a><span>2019 original preserved · tested 2026 educational revision</span></li>
-<li><a href="https://github.com/Souravfrp/Souravfrp.github.io">This portfolio's source</a><span>Public GitHub Pages website and HTML CV</span></li>
+<li id="repo-quant-ai"><a href="https://github.com/Souravfrp/quant-ai-market-lab">Quant AI Market Lab</a><span>Historical market/portfolio study · completed v1.0.0</span></li>
+<li id="repo-quant-ii"><a href="https://github.com/Souravfrp/quant-market-lab-ii">Quant Market Lab II</a><span>Frozen prospective risk forecasts · October evaluated; later outcomes pending</span></li>
+<li id="repo-payment"><a href="https://github.com/Souravfrp/payment-guard">Payment Guard</a><span>Synthetic fraud-review ranking · frozen final experiment completed</span></li>
+<li id="repo-audit"><a href="https://github.com/Souravfrp/research-audit">ResearchAudit</a><span>AST/rule-based research checker · multi-agent implementation pending</span></li>
+<li id="repo-random"><a href="https://github.com/Souravfrp/Experiments-on-Random-Walks">Experiments on Random Walks</a><span>Five cube walks · explicit and optimized Python/C++ · dimension comparisons</span><a class="demo-link" href="https://souravfrp.github.io/Experiments-on-Random-Walks/#run-experiment">Interactive experiment website ↗</a></li>
+<li id="repo-mixed"><a href="https://github.com/Souravfrp/estimates-of-mixed-volume-components">Mixed Volume Approximations</a><span>Python/C++ numerical experiments · theoretical-versus-empirical limits documented</span></li>
+<li id="repo-rsa"><a href="https://github.com/Souravfrp/rsa-educational">RSA Educational</a><span>2019 original preserved · tested 2026 educational revision</span></li>
+<li id="repo-portfolio"><a href="https://github.com/Souravfrp/Souravfrp.github.io">This portfolio's source</a><span>Public GitHub Pages website and HTML CV</span></li>
 </ul>
 </aside>
 </div></section>
@@ -165,8 +208,9 @@
   <div class="container">
 
     <p class="eyebrow">RESEARCH</p>
-    <h2>Featured Research</h2>
-    <p class="section-intro">Alongside my theoretical research, I have published a <a href="#random-walks">computational study of five random walks</a> with an <a href="https://souravfrp.github.io/Experiments-on-Random-Walks/#run-experiment" target="_blank" rel="noopener noreferrer">interactive research website</a> and fully accessible Python/C++ source.</p>
+    <h2>Research</h2>
+    <p class="section-intro">My research combines theoretical questions in convex geometry, algorithms and probability with computational experiments. Theoretical papers and projects are listed separately from the interactive computational studies.</p>
+    <h3 id="research-papers" class="research-subheading">Theoretical research &amp; papers</h3>
 
 
     <!-- PUBLICATION -->
@@ -259,6 +303,25 @@
     </article>
 
 
+
+    <div id="computational-research" class="computational-research">
+      <h3 class="research-subheading">Computational research &amp; experiments</h3>
+      <p class="section-intro">For each numerical study, visitors can inspect the mathematical approach and code or open an independent browser demonstration.</p>
+      <div class="research-study-grid">
+        <article class="card research-study">
+          <p class="tag">EXPERIMENTAL SAMPLING · FIVE WALKS</p>
+          <h4>Experiments on Random Walks</h4>
+          <p>Convergence diagnostics and computation across dimensions, with separate Python/C++ research implementations and a browser experiment runner.</p>
+          <p class="card-links"><a href="https://souravfrp.github.io/Experiments-on-Random-Walks/" target="_blank" rel="noopener noreferrer">Interactive Random Walks lab ↗</a><a href="#random-walks">Project details ↓</a></p>
+        </article>
+        <article class="card research-study">
+          <p class="tag">CUBE-AND-BALL GEOMETRY · MONTE CARLO</p>
+          <h4>Approximation of Mixed Volumes</h4>
+          <p>Explore exact cube-and-ball reference coefficients alongside a small independent-sampling Monte Carlo estimator. The original thesis-related Python/C++ study remains separate.</p>
+          <p class="card-links"><a href="https://souravfrp.github.io/Experiments-on-Random-Walks/mixed-volumes.html" target="_blank" rel="noopener noreferrer">Interactive Mixed Volume lab ↗</a><a href="#mixed-volume">Project details ↓</a></p>
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 

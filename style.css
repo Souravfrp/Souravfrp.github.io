@@ -121,3 +121,35 @@ html { scroll-behavior: smooth; scroll-padding-top: 110px; }
 .hero-mini-source:hover{color:var(--text);text-decoration:underline;text-underline-offset:3px}
 .hero .lead{max-width:900px}
 @media(max-width:720px){.hero-research-links{align-items:flex-start}.hero-mini-link{font-size:.83rem}.hero-mini-source{padding:5px 0}}
+
+/* Short dropdown shortcuts in the existing navigation bar. */
+.nav-inner{position:relative}
+.main-nav{align-items:center}
+.main-nav>.nav-item{position:relative;display:flex;align-items:center;gap:1px}
+.main-nav>.nav-item>a{display:block;padding:8px 0}
+.nav-toggle{background:none;border:0;color:var(--muted);cursor:pointer;font-size:12px;line-height:1;border-radius:5px;padding:7px 5px}
+.nav-toggle:hover,.nav-toggle:focus-visible{color:var(--text);background:var(--line)}
+.nav-menu{display:none;position:absolute;top:calc(100% + 4px);left:0;min-width:248px;width:max-content;max-width:300px;max-height:min(70vh,430px);overflow:auto;background:#14202d;border:1px solid #354555;box-shadow:0 14px 32px #0008;border-radius:10px;padding:9px;z-index:50}
+.nav-item:hover>.nav-menu,.nav-item:focus-within>.nav-menu,.nav-item.nav-open>.nav-menu{display:grid;gap:2px}
+.nav-menu>a{display:block;padding:9px 11px;border-radius:6px;color:#d9e5f1;font-size:.84rem;line-height:1.35;text-decoration:none}
+.nav-menu>a:hover,.nav-menu>a:focus-visible{background:#274158;color:#fff}
+.nav-item:nth-child(3)>.nav-menu{left:auto;right:0}
+.hero-direction{display:flex;gap:10px;align-items:center;flex-wrap:wrap;letter-spacing:.12em}
+.hero-direction span{font-size:1rem;color:#d4e4f5}
+.research-subheading{font-size:1.55rem;margin:30px 0 20px;scroll-margin-top:115px}
+.research-study-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.research-study h4{font-size:1.17rem;margin:7px 0 12px}
+.research-study p{color:var(--muted)}
+.research-study .card-links{margin-top:20px}
+.computational-research{margin-top:50px;padding-top:25px;border-top:1px solid var(--line);scroll-margin-top:112px}
+.repo-directory li{scroll-margin-top:120px}
+@media(max-width:800px){.research-study-grid{grid-template-columns:1fr}}
+@media(max-width:720px){
+ .main-nav{width:100%;gap:4px 12px}
+ .main-nav>.nav-item{position:static}
+ .main-nav>.nav-item>a{padding:5px 0}
+ .main-nav>.nav-item>.nav-menu{left:5%;right:5%;top:100%;width:auto;max-width:none;min-width:0;max-height:55vh}
+ .nav-toggle{padding:8px 3px}
+ .hero-direction{gap:7px;line-height:1.6;font-size:.69rem}
+ .research-subheading{font-size:1.3rem}
+}

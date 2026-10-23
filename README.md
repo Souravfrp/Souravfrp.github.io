@@ -29,6 +29,12 @@ The [final research account](https://github.com/Souravfrp/payment-guard/blob/mai
 
 The homepage includes an eight-repository source directory, project statuses, scope/limitation statements, evidence links and representative figures, with separate direct links to the Random Walks research website and the GitHub code. The site's HTML CV and **`Sourav_Roy_CV.pdf`** were refreshed for Payment Guard. The GitHub Actions PDF workflow passed its A4, text, hyperlink and safe-margin checks.
 
+## Homepage research navigation
+
+The homepage introduces the transition as **Mathematics & Algorithms → Quantitative Research & Data Science** and retains the detailed academic background, with the 2021–2026 Computer and System Sciences master's degree before the 2019–2021 Mathematics master's degree. Short navigation menus let visitors jump directly to project cards, repository-directory entries, theoretical papers and computational research.
+
+The shared [Computational Convex Geometry experiment archive](https://souravfrp.github.io/Experiments-on-Random-Walks/) now offers **two distinct pages**: [Experiments on Random Walks](https://souravfrp.github.io/Experiments-on-Random-Walks/) and [Approximation of Mixed Volumes](https://souravfrp.github.io/Experiments-on-Random-Walks/mixed-volumes.html). The second page is a limited independent-sampling demonstration, not the full thesis oracles; the links to both original source repositories remain available.
+
 ## Website maintenance
 
 - Website markup and project evidence: [`index.html`](index.html)
