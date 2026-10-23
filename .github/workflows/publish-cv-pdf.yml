@@ -32,7 +32,7 @@ jobs:
           pdf = fitz.open(path)
           assert 2 <= len(pdf) <= 7, f"Unexpected page count: {len(pdf)}"
           full_text = "".join(p.get_text() for p in pdf)
-          for term in ["SOURAV ROY", "Quant AI Market Lab", "Payment Guard", "EDUCATION", "Mixed Volume"]:
+          for term in ["SOURAV ROY", "Computer and System Sciences", "Quantitative Research", "Quant AI Market Lab", "Payment Guard", "Experiments on Random Walks", "EDUCATION", "Mixed Volume"]:
               assert term.lower() in full_text.lower(), f"Missing CV text: {term}"
           assert all(abs(p.rect.width - 595.2756) < 1 and abs(p.rect.height - 841.8898) < 1 for p in pdf), "Pages must be A4"
           links = [lnk for p in pdf for lnk in p.get_links() if lnk.get("uri")]
@@ -44,6 +44,8 @@ jobs:
               "https://github.com/Souravfrp/quant-market-lab-ii",
               "https://github.com/Souravfrp/payment-guard",
               "https://github.com/Souravfrp/research-audit",
+              "https://github.com/Souravfrp/Experiments-on-Random-Walks",
+              "https://souravfrp.github.io/Experiments-on-Random-Walks/",
               "https://github.com/Souravfrp/estimates-of-mixed-volume-components",
               "https://github.com/Souravfrp/rsa-educational",
               "https://arxiv.org/abs/2508.19582",
