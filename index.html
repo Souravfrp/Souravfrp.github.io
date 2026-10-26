@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sourav Roy — mathematics, computer and system sciences, randomized algorithms, convex geometry and computational research. Projects in Python, C++, random walks, data science, risk analytics and finance.">
+  <meta name="description" content="Sourav Roy — mathematical research, quantitative finance, risk analytics and reproducible computation. Explore Python/C++ random walks, mixed volumes, fraud-risk modeling, financial forecasting and ResearchAudit with local LLM, LangChain.js and RAG.">
   <title>Sourav Roy | Mathematics & Algorithms → Quantitative Research & Data Science</title>
   <link rel="stylesheet" href="style.css?v=20261024-cv-cleanup">
   <script src="nav.js" defer></script>
@@ -36,6 +36,7 @@
           <a href="#repo-random">Random Walks</a>
           <a href="#repo-mixed">Mixed Volume Approximations</a>
           <a href="#repo-rsa">RSA Educational</a>
+           <a href="#repo-portfolio">Portfolio website source</a>
         </div>
       </div>
       <div class="nav-item">
@@ -72,14 +73,14 @@
 
 <section id="projects" class="section alt">
 <div class="container">
-<p class="eyebrow">PUBLIC PROJECTS · RANDOM WALKS ADDED 23 OCTOBER 2026</p>
+<p class="eyebrow">PUBLIC PROJECTS · RECONCILED WITH GITHUB 26 OCTOBER 2026</p>
 <h2>Questions, experiments and evidence</h2>
-<p class="section-intro">These seven project entries link to the currently published GitHub repositories and distinguish completed research milestones from ongoing experiments. For each project I show measured results, implementation evidence and limits on what the result means. The <a href="cv.html">HTML CV</a> and downloadable A4 PDF reflect the updated Payment Guard research; the PDF was regenerated and validated by the site's publication workflow.</p>
+<p class="section-intro">These seven research and software projects link to their GitHub repositories, with the <a href="#repositories">portfolio website source</a> listed separately as the eighth public repository. I distinguish completed milestones from work in progress, and link to evidence, results and limitations. My <a href="cv.html">HTML CV</a> and downloadable A4 PDF remain available.</p>
 <div class="update-strip" aria-label="Current project milestones">
 <a href="#market-lab"><strong>Market risk</strong><span>Completed historical study</span></a>
 <a href="#market-lab-ii"><strong>Frozen forecasts</strong><span>EWMA frozen · ACF diagnosed</span></a>
 <a href="#paymentguard"><strong>Payment risk</strong><span>Frozen holdout complete · 186 tests</span></a>
-<a href="#researchaudit"><strong>Research checks</strong><span>Rule-based baseline published</span></a>
+<a href="#researchaudit"><strong>ResearchAudit</strong><span>Local Qwen3 + RAG · 52 Python and 13 JS tests</span></a>
 <a href="#random-walks"><strong>Random walks</strong><span>Python/C++ + live research website</span></a>
 </div>
 <div class="grid project-grid">
@@ -127,17 +128,17 @@
 <p class="card-links"><a href="https://github.com/Souravfrp/payment-guard">Code and completed research →</a><a href="https://github.com/Souravfrp/payment-guard/blob/main/docs/final_holdout_first_results.md">Final evaluated results →</a><a href="https://github.com/Souravfrp/payment-guard/blob/main/docs/what_this_project_can_and_cannot_claim.md">What this work can and cannot claim →</a></p>
 </article>
 <article class="card" id="researchaudit">
-<p class="tag">RULE-BASED BASELINE PUBLISHED · 10 OCTOBER 2026</p>
+<p class="tag">IMPLEMENTED AUDIT BASELINE + LOCAL LLM/RAG · 26 OCTOBER 2026</p>
 <h3>ResearchAudit</h3>
-<p class="project-question">What evidence supports a research claim, and what still needs checking?</p>
-<p>I froze Quant AI Market Lab v1.0.0 and built a Python rule-based checker that screens source patterns, records file coverage and produces reviewable reports. I also tested its isolated transaction-cost function.</p>
-<div class="result-box"><strong>34 Python files screened · 52 test methods passed</strong><span>10 candidate findings were triaged. Twenty designed examples run within one test; these are not independent detection-accuracy measurements.</span></div>
+<p class="project-question">Can I trace a quantitative research claim to code, tests and evidence—and detect when an AI explanation goes beyond that evidence?</p>
+<p>I froze a Quant AI Market Lab v1.0.0 source snapshot, implemented a Python rule-based checker and isolated transaction-cost checks, then added a separate locally run JavaScript workflow connecting <strong>LangChain.js → Ollama → Qwen3</strong> with keyword-based retrieval-augmented generation (RAG).</p>
+<div class="result-box"><strong>34 Python files screened · 52 Python tests · 13 JavaScript tests</strong><span>Ten candidate findings were reviewed. Local RAG retrieves passages from three allowlisted source files with line ranges and SHA-256 fingerprints; selected citation mistakes are detected by automated checks.</span></div>
 <div class="project-body">
-<p><strong>What I found:</strong> Claim 7 is supported for the tested cases, with two input-validation gaps: near-unit weight sums can overallocate, and two-dimensional weights can trigger broadcasting. I preserved the audited source and added tests that record these behaviours.</p>
-<p>The other six claims retain their provisional source-inspection labels. I confirmed no look-ahead error at the flagged locations; that does not certify the entire project as leakage-free.</p>
-<p class="scope"><strong>Limits and next step:</strong> I have not reproduced the full backtest numerical results or implemented the proposed multi-agent system. Variable-valued settings, aliased split imports and some seed paths remain checker blind spots. I need independent labelled cases and a second frozen target before claiming broader audit reliability.</p>
+<p><strong>Mathematical validation:</strong> Isolated Claim 7 transaction-cost tests document two input-validation gaps: slightly above-unit portfolio-weight totals and two-dimensional weight inputs that trigger broadcasting. The frozen audited source remains unchanged; the full financial backtest was not reproduced.</p>
+<p><strong>Local AI milestone:</strong> A completed LangChain/Ollama/Qwen3 run retrieved source evidence and produced an answer identifying those previously documented issues. Manual review also found incomplete citation ranges and a substantive incorrect interpretation. I built citation utilities and a checker with 13 passing JavaScript retrieval/citation tests; these checks are not a proof of model correctness.</p>
+<p class="scope"><strong>Scope and next steps:</strong> Retrieval is keyword-based (no embeddings or vector database); citation checks partly target Claim 7, and the AI has not independently discovered new defects in a held-out benchmark. The four proposed mathematical, code, methodology and skeptic agents, their coordinator and wider reliability evaluation are <strong>not yet implemented</strong>.</p>
 </div>
-<p class="card-links"><a href="https://github.com/Souravfrp/research-audit">Published baseline →</a><a href="https://github.com/Souravfrp/research-audit/blob/main/claims/claim_07_transaction_costs.md">Claim 7 evidence and gaps →</a><a href="https://github.com/Souravfrp/research-audit/blob/main/docs/rule_based_checker.md">Rules and limitations →</a><a href="https://github.com/Souravfrp/research-audit/blob/main/results/rule_checker_triage.md">Reviewed findings →</a></p>
+<p class="card-links"><a href="https://github.com/Souravfrp/research-audit">Source and overview →</a><a href="https://github.com/Souravfrp/research-audit/tree/main/integrations/langchain-ollama-js">Local LLM, RAG and citation tests →</a><a href="https://github.com/Souravfrp/research-audit/blob/main/docs/local_llm_trial_2026-10-24.md">Run evidence and limitations →</a><a href="https://github.com/Souravfrp/research-audit/blob/main/claims/claim_07_transaction_costs.md">Mathematical claim audit →</a></p>
 </article>
 <article class="card supplementary" id="random-walks">
 <p class="tag">COMPUTATIONAL CONVEX GEOMETRY · PYTHON / C++17 · INTERACTIVE WEBSITE</p>
@@ -177,17 +178,18 @@
 </article>
 </div>
 <aside id="repositories" class="repo-directory" aria-labelledby="repo-list-title">
-<p class="eyebrow">GITHUB PROJECT DIRECTORY · SEVEN RESEARCH AND SOFTWARE REPOSITORIES</p>
+<p class="eyebrow">GITHUB REPOSITORY DIRECTORY · EIGHT PUBLIC REPOSITORIES</p>
 <h3 id="repo-list-title">Explore every public repository</h3>
-<p>Each project link opens the repository's current <code>main</code> branch. I keep completed studies separate from experiments still awaiting outcomes.</p>
+<p>Seven repositories contain research or software projects; the eighth is the source for this portfolio website. Each link opens the public repository, and completed studies are distinguished from unfinished experiments.</p>
 <ul>
 <li id="repo-quant-ai"><a href="https://github.com/Souravfrp/quant-ai-market-lab">Quant AI Market Lab</a><span>Historical market/portfolio study · completed v1.0.0</span></li>
 <li id="repo-quant-ii"><a href="https://github.com/Souravfrp/quant-market-lab-ii">Quant Market Lab II</a><span>Frozen prospective risk forecasts · October evaluated; later outcomes pending</span></li>
 <li id="repo-payment"><a href="https://github.com/Souravfrp/payment-guard">Payment Guard</a><span>Synthetic fraud-review ranking · frozen final experiment completed</span></li>
-<li id="repo-audit"><a href="https://github.com/Souravfrp/research-audit">ResearchAudit</a><span>AST/rule-based research checker · multi-agent implementation pending</span></li>
+<li id="repo-audit"><a href="https://github.com/Souravfrp/research-audit">ResearchAudit</a><span>Rule-based audits; local Qwen3, LangChain.js and keyword RAG; citation checks; 52 Python + 13 JavaScript tests · four-agent system planned</span></li>
 <li id="repo-random"><a href="https://github.com/Souravfrp/Experiments-on-Random-Walks">Experiments on Random Walks</a><span>Five cube walks · explicit and optimized Python/C++ · dimension comparisons</span><a class="demo-link" href="https://souravfrp.github.io/Experiments-on-Random-Walks/#run-experiment">Interactive experiment website ↗</a></li>
 <li id="repo-mixed"><a href="https://github.com/Souravfrp/estimates-of-mixed-volume-components">Mixed Volume Approximations</a><span>Python/C++ numerical experiments · theoretical-versus-empirical limits documented</span></li>
 <li id="repo-rsa"><a href="https://github.com/Souravfrp/rsa-educational">RSA Educational</a><span>2019 original preserved · tested 2026 educational revision</span></li>
+<li id="repo-portfolio"><a href="https://github.com/Souravfrp/Souravfrp.github.io">Portfolio website source</a><span>HTML/CSS/JavaScript research portfolio, publications and CV · this website</span></li>
 </ul>
 </aside>
 </div></section>
@@ -411,9 +413,10 @@
 <p class="eyebrow">TOOLKIT</p><h2>Technical Skills</h2>
 <p class="section-intro">Methods and tools I have used in research or the projects linked above. This records practical use; it does not imply the same level of proficiency in every tool.</p>
 <div class="skills">
-<div><strong>Programming &amp; data</strong><span>Python · NumPy · pandas · SciPy · scikit-learn · SQL · SQLite · Python unittest · pytest · C++17 · C · MATLAB</span></div>
+<div><strong>Programming &amp; data</strong><span>Python · JavaScript / Node.js · NumPy · pandas · SciPy · scikit-learn · SQL · SQLite · unittest · pytest · Node test runner · C++17 · C · MATLAB</span></div>
 <div><strong>Statistical modeling</strong><span>PCA · KMeans · Gaussian hidden Markov models · Ridge regression · Random Forest · EWMA · autocorrelation diagnostics · logistic regression · XGBoost · probability calibration</span></div>
 <div><strong>Optimization &amp; evaluation</strong><span>CVXPY · Clarabel · covariance estimation · minimum-variance portfolios · chronological validation · frozen holdout evaluation · fixed-cutoff forecasting · historical backtesting · leakage auditing · AST-based screening · feature ablation · paired review-budget evaluation</span></div>
+<div><strong>Local LLM &amp; evidence tools</strong><span>Qwen3 through Ollama · LangChain.js · keyword-based RAG · source-line evidence retrieval · selected citation verification · local LLM evaluation</span></div>
 <div><strong>Simulation &amp; sampling</strong><span>Randomized algorithms · ball walk · hit-and-run · MCMC-style sampling · numerical validation · mixed-volume computation</span></div>
 <div><strong>Mathematics</strong><span>Probability · Linear algebra · Convex geometry · Optimization · Randomized algorithms</span></div>
 <div><strong>Research tools</strong><span>Git · GitHub · JupyterLab / Jupyter Notebook · VS Code · conda / Anaconda · macOS Terminal · DB Browser for SQLite · sqlite3 CLI · Homebrew · Apple Clang (C++17) · LaTeX · SageMath · Mathematica</span></div>
